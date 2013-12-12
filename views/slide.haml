@@ -1,0 +1,55 @@
+!!!
+%html
+  %head
+    %style(type="text/css")
+      div#wrapper { position: relative; margin: 0 auto; } |
+      p.boxes { display: none; position absolute; } |
+      p#box1 { display: block; } |
+      .prev { position: absolute; left: -20px; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(0,0,0,1), rgba(255,255,255,0)); background: -webkit-gradient(linear, left, right, from(rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));} |
+      .next { position: absolute; right: 0; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(0,0,0,0.5)); background: -webkit-gradient(linear, left, right, from(rgba(255,255,255,0)), to(rgba(0,0,0,0.5)));} |
+    %title
+      HAML Test
+  %body
+    #wrapper(align="center")
+      %p#box1.boxes
+        %img(src="/#{images[0]}")
+      - images.drop(1).each do |i|
+        %p.boxes
+          %img(src="/#{i}")
+    %input.prev(type="button" value="<<")
+    %input.next(type="button" value=">>")
+    %script(src="http://code.jquery.com/jquery.min.js")
+    %script(type="text/javascript")
+      var wrapper = $("div#wrapper"); |
+      var resize = function(page) { |
+        var scale = Math.min($(window).width() / page.width(), $(window).height() / page.height()); |
+        page.width(page.width() * scale); |
+      }; |
+      $(document).ready( function() { |
+        resize(wrapper.find("p:visible").children("img")); |
+      }); |
+      $("input:button.next").click(function() { |
+        var next = wrapper.find("p:visible").next(); |
+        if(next.length != 0) { |
+          wrapper.find("p:visible").fadeOut("fast", function() { |
+            next.fadeIn("fast"); |
+            resize(next.children("img")); |
+          }); |
+        } |
+      }); |
+      $("input:button.prev").click(function() { |
+        var prev = wrapper.find("p:visible").prev(); |
+        if(prev.length != 0){ |
+          wrapper.find("p:visible").fadeOut("fast", function() { |
+            prev.fadeIn("fast"); |
+            resize(prev.children("img")); |
+          }); |
+        } |
+      }); |
+      $("input.next,input.prev").hover( function() { |
+        $(this).css('width', $(window).width() / 5); |
+        $(this).css('height', $(window).height()); |
+        $(this).css('opacity', '1'); |
+      }, function(){ |
+        $(this).css('opacity', '0'); |
+      }); |
