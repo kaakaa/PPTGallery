@@ -1,44 +1,49 @@
-require 'rubygems'
+﻿require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader' if development?
 require 'haml'
 require 'fileutils'
 
-require './model/UploadedFile'
+get '/' do
+	redirect '/upload'
+end
 
-class PPTGallery < Sinatra::Base
-	get '/' do
-		redirect '/upload'
-	end
+get '/upload' do
+	home = File.dirname(__FILE__)
+	Dir.mkdir(File.join(home, 'uploads')) if !Dir.exists?(File.join(home, 'uploads'))
+	dirs = Dir.glob(File.join(home, "uploads","*")).sort.reverse
+	@resourceDirs = Array.new
+	dirs.each{ |d|
+		@resourceDirs << "#{d.gsub!(/#{home}/,'')}/"
+	}
+	haml :upload
+end
 
-	get '/upload' do
-		Dir.mkdir('uploads') if !Dir.exists?('uploads')
-		@resourceDirs = Dir.glob("uploads/*/").sort.reverse
-		haml :upload
-	end
+post "/upload" do
+	ext = params['myfile'][:filename].split('.')[-1]
+	uploadedFile = UploadedFile.new("#{Time.now.strftime('%Y%m%d%H%M%S')}_#{params['myfile'][:filename].split('.')[0]}.#{ext}")
+	uploadedFile.save(params['myfile'][:tempfile])
 
-	post "/upload" do
-		ext = params['myfile'][:filename].split('.')[-1]
-		uploadedFile = UploadedFile.new("#{Time.now.strftime('%Y%m%d%H%M%S')}_#{params['myfile'][:filename].split('.')[0]}.#{ext}")
-		uploadedFile.save(params['myfile'][:tempfile])
+	uploadedFile.savePdf()
+	uploadedFile.savePng()
+	uploadedFile.makeHtml()
 
-		uploadedFile.savePdf()
-		uploadedFile.savePng()
-		uploadedFile.makeHtml()
+	redirect '/upload'
+end
 
-		redirect '/upload'
-	end
+post "/delete" do
+	deleteUploaded(params['target'])
+	redirect '/upload'
+end
 
-	post "/delete" do
-		deleteUploaded(params['target'])
-		redirect '/upload'
-	end
-
-	helpers do
-		def deleteUploaded(path)
-			FileUtils.rm_r(Dir.glob(path + '**/*.*'), {:force=>true})
-			FileUtils.rm_r(Dir.glob(path + '**/'), {:force=>true})
-		end
+delete "/delete" do
+	deleteUploaded(params['target'])
+	redirect '/upload'
+end
+helpers do
+	def deleteUploaded(path)
+		FileUtils.rm_r(Dir.glob(File.join(File.dirname(__FILE__), path, "**", "*.*")), {:force=>true})
+		FileUtils.rm_r(Dir.glob(File.join(File.dirname(__FILE__), path)), {:force=>true})
 	end
 end

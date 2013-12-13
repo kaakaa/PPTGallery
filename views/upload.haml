@@ -31,16 +31,16 @@
       .row
         - @resourceDirs.each do |d|
           .col-xs-12.col-md-4
-            %a(href="#{d}#{d.split('/')[-1].split('_')[0]}.html")
+            %a(href="#{d}#{d.split('/')[-1].split('_')[1]}.html")
               %img.img-thumbnail(src="#{d}png/page001.png" width="360px" height="240px")
             %form(method='post' action="/delete")
-              %a(href="#{d}#{d.split('/')[-1].split('_')[0]}.ppt")
+              %a(href="#{d}#{d.split('/')[-1].split('_')[1]}.ppt")
                 ppt
               \/ 
-              %a(href="#{d}#{d.split('/')[-1].split('_')[0]}.pdf")
+              %a(href="#{d}#{d.split('/')[-1].split('_')[1]}.pdf")
                 pdf
               \/ 
-              %a(href="#{d}#{d.split('/')[-1].split('_')[0]}.html")
+              %a(href="#{d}#{d.split('/')[-1].split('_')[1]}.html")
                 html
               \/
               %input(type="hidden" name="_method" value="delete")
