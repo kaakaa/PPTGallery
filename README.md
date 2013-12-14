@@ -1,44 +1,29 @@
 PPTGallery
 ==========
 
-This app is slide gallery.
+This app is ppt/pptx gallery on CentOS.
 
-When you upload .ppt file, this covert that to pdf file and create link to the pdf file.
+When you upload .ppt or .pptx file, this app coverts it to pdf and slide html.
 
 
 USAGE
 -----
 
-Firstly, start OpenOffice.org in listening mode on port 8100
-```
-soffice -headless -accept="socket,port=8100;urp;"
-```
-
-Then, git clone PPTGallery sources.
-```
-git clone https://github.com/kaakaa/PPTGallery.git
-```
-
-Next, type follow command.
-
-```
-bundle install --path vendor/bundle
-bundle exec rackup config.ru
-```
-
-And then you access localhost:9292
+see cookbooks -> [PPTGallery_vagrant](http://github.com/kaakaa/PPTGallery_vagrant.git "PPTGallery_vagrant")
 
 REQUIREMENTS
 ------------
 
-This app use [JODConverter | Art of Solving](http://www.artofsolving.com/opensource/jodconverter "JODConverter | Art of Solving") and .
-So NEED to install [Apache OpenOffice](http://www.openoffice.org/ja/ "Apache OpenOffice").
+This app use [JODConverter](http://www.artofsolving.com/opensource/jodconverter "JODConverter") for converting .ppt/.pptx to .pdf and [rmagick](https://github.com/rmagick/rmagick "rmagick") for converting .pdf to .png.
+So NEED to install [LibreOffice](http://www.libreoffice.org/ "LibreOffice") and [ImageMagick](http://www.imagemagick.org/script/index.php "ImageMagick").
 
 And JODConverter library requires bellow:
 ```
  * Java 1.4 or higher
  * OpenOffice.org 2.x or 3.x; the latest stable version (currenty 3.0.1) is generally recommended
 ```
+
+
 
 Licenses
 --------
