@@ -45,7 +45,7 @@
               \/
               %input(type="hidden" name="_method" value="delete")
               %input(type="hidden" name="target" value="#{d}")
-              %button.btn.btn-link.btn-xs(type="submit" style="border:none;")
+              %button.btn.btn-link.btn-xs(type="submit" style="border:none;" id='delete')
                 %font(color="red")
                   %i.glyphicon.glyphicon-remove-sign
 
@@ -75,4 +75,12 @@
           alert("Please select ppt/pptx file"); |
           return false; |
         }; |
+      }); 
+    %script(type='text/javascript')
+      $("button[id=delete]").click(function() { |
+        if(window.confirm('Delete this slide?')) { |
+          return true; |
+        } else { |
+          return false; |
+        } |
       }); 
