@@ -21,9 +21,13 @@ get '/upload' do
 end
 
 post "/upload" do
+	# uplod dir name is "#{Datetime}_#{UploadedFilename}_#{ext}"
 	ext = params['myfile'][:filename].split('.')[-1]
-	uploadedFile = UploadedFile.new("#{Time.now.strftime('%Y%m%d%H%M%S')}_#{params['myfile'][:filename].split('.')[0]}.#{ext}")
-	uploadedFile.save(params['myfile'][:tempfile])
+	filename = params['myfile'][:filename].split('.')[0]
+	dirname = "#{Time.now.strftime('%Y%m%d%H%M%S')}_#{filename}_#{ext}"
+
+	uploadedFile = UploadedFile.new(dirname)
+	uploadedFile.savePpt(params['myfile'][:tempfile])
 
 	uploadedFile.savePdf()
 	uploadedFile.savePng()
