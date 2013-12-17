@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     backports (3.3.5)
+    builder (3.2.2)
     daemons (1.1.9)
     eventmachine (1.0.3)
     foreman (0.61.0)
@@ -37,6 +38,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  builder
   foreman (= 0.61)
   haml
   rack

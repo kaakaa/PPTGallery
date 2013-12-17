@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'sinatra/reloader' if development?
 require 'haml'
 require 'fileutils'
+require 'builder'
 
 get '/' do
 	redirect '/upload'
@@ -34,6 +35,16 @@ post "/upload" do
 	uploadedFile.makeHtml()
 
 	redirect '/upload'
+end
+
+get '/rss' do
+	home = File.dirname(__FILE__)
+	dirs = Dir.glob(File.join(home, "uploads","*")).sort.reverse
+	@posts = []
+	dirs[0..15].each{ |d|
+		@posts << Post.new(d.gsub!(/#{home}/,''), "#{request.host}:#{request.port}")
+	}
+	builder :rss
 end
 
 post "/delete" do
