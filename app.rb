@@ -7,17 +7,20 @@ require 'fileutils'
 require 'builder'
 
 get '/' do
-	redirect '/upload'
+	redirect '/gallery/1'
 end
 
-get '/upload' do
+get '/gallery/:page' do
 	home = File.dirname(__FILE__)
 	Dir.mkdir(File.join(home, 'uploads')) if !Dir.exists?(File.join(home, 'uploads'))
 	dirs = Dir.glob(File.join(home, "uploads","*")).sort.reverse
 	@resourceDirs = Array.new
-	dirs.each{ |d|
+	page = params[:page].to_i
+	dirs[(page-1)*15..page*15-1].each{ |d|
 		@resourceDirs << "#{d.gsub!(/#{home}/,'')}/"
 	}
+	@pagenum = (dirs.size() / 15) + 1
+	@current = params[:page].to_i
 	haml :upload
 end
 

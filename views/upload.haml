@@ -28,6 +28,17 @@
                 Browse
             %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading...")
       %hr
+      - if @pagenum != 1
+        %ul.pagination.pagination-sm
+          - for page in 1..@pagenum do
+            - if @current == page
+              %li.active
+                %a(href="#")
+                  = page
+            - else
+              %li 
+                %a(href="/gallery/#{page}")
+                  = page
       .row
         - @resourceDirs.each do |d|
           .col-xs-12.col-md-4
