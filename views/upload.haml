@@ -9,6 +9,7 @@
 
     %link(href="/css/bootstrap.min.css" rel="stylesheet")
     %link(href="/css/starter-template.css" rel="stylesheet")
+    %link(href="/css/introjs.css" rel="stylesheet")
     %title
       PPTGallery
   %body
@@ -17,16 +18,21 @@
         .navbar-header
           %a.navbar-brand(href="#")
             PPTGallery
+        %ul.nav.navbar-right
+          %li
+            %button.btn.btn-inverse(onClick="introJs().start()" style="background-color:#222")
+              %font(size="5em" color="white")
+                %i.glyphicon.glyphicon-question-sign
     .container
       .starter-template
-        %form(method='post' enctype='multipart/form-data')
+        %form(action='/upload' method='post' enctype='multipart/form-data')
           %input(id='myfile' type='file' name='myfile' style='display:none')
           .input-group
             %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx file')
-            %span.input-group-btn
+            %span.input-group-btn(data-intro="CHOOSE upload file")
               %button.btn(onclick="$('input[id=myfile]').click();" type='button')
                 Browse
-            %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading...")
+            %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading..." data-intro="UPLOAD choosen file.")
       %hr
       - if @pagenum != 1
         %ul.pagination.pagination-sm
@@ -40,10 +46,16 @@
                 %a(href="/gallery/#{page}")
                   = page
       .row
-        - @resourceDirs.each do |d|
+        - @resourceDirs.each_with_index do |d,i|
           .col-xs-12.col-md-4
-            %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
+            - if i == 0
+              %a.slidelink(href="" data-intro="COPY iframe tag to clipboard.")
+                %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
+                %font(color="gray")
+                  %i.glyphicon.glyphicon-share
+            - else
               %a.slidelink(href="")
+                %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
                 %font(color="gray")
                   %i.glyphicon.glyphicon-share
             %br
@@ -102,10 +114,11 @@
       }); 
     %script(src='/js/jquery.zclip.min.js')
     %script(type='text/javascript')
-      $('input.zclip').each(function() { |
-        var file = $(this).val(); |
-        $('a.slidelink').zclip({ |
+      $(document).ready(function() { |
+        var elem = $('a.slidelink'); |
+        elem.zclip({ |
           path: '/js/ZeroClipboard.swf', |
-          copy: '#iframe(http://' + location.host + file + ', style="width:100%, height="600px", iestyle="width:100%, height:600px")' |
+          copy: '#iframe(http://' + location.host + elem.children('input.zclip').val() + ', style="width:100%, height="600px", iestyle="width:100%, height:600px")' |
         }); |
       });
+    %script(src='/js/intro.js')

@@ -37,7 +37,7 @@ post "/upload" do
 	uploadedFile.savePng()
 	uploadedFile.makeHtml()
 
-	redirect '/upload'
+	redirect '/gallery/1'
 end
 
 get '/rss' do
@@ -52,12 +52,12 @@ end
 
 post "/delete" do
 	deleteUploaded(params['target'])
-	redirect '/upload'
+	redirect '/gallery/1'
 end
 
 delete "/delete" do
 	deleteUploaded(params['target'])
-	redirect '/upload'
+	redirect '/gallery/1'
 end
 helpers do
 	def deleteUploaded(path)
