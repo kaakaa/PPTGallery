@@ -5,12 +5,18 @@ require 'sinatra/reloader' if development?
 require 'haml'
 require 'fileutils'
 require 'builder'
+require 'logger'
+
+configure do
+	enable :logging
+end
 
 get '/' do
 	redirect '/gallery/1'
 end
 
 get '/gallery/:page' do
+	MyLogger.log.info "Access in #{params[:page]} page"
 	home = File.dirname(__FILE__)
 	Dir.mkdir(File.join(home, 'uploads')) if !Dir.exists?(File.join(home, 'uploads'))
 	dirs = Dir.glob(File.join(home, "uploads","*")).sort.reverse
