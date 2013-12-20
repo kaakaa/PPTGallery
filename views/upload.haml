@@ -1,125 +1,64 @@
-!!!
-%html
-  %head
-    %meta(charset="utf-8")
-    %meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %meta(name="description" content="")
-    %meta(name="author" content="")
-
-    %link(href="/css/bootstrap.min.css" rel="stylesheet")
-    %link(href="/css/starter-template.css" rel="stylesheet")
-    %link(href="/css/introjs.css" rel="stylesheet")
-    %title
-      PPTGallery
-  %body
-    .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-      .container
-        .navbar-header
-          %a.navbar-brand(href="#")
-            PPTGallery
-        %ul.nav.navbar-right
-          %li
-            %button.btn.btn-inverse(onClick="introJs().start()" style="background-color:#222")
-              %font(size="5em" color="white")
-                %i.glyphicon.glyphicon-question-sign
+%body
+  .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
     .container
-      .starter-template
-        %form(action='/upload' method='post' enctype='multipart/form-data')
-          %input(id='myfile' type='file' name='myfile' style='display:none')
-          .input-group
-            %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx file')
-            %span.input-group-btn(data-intro="CHOOSE upload file")
-              %button.btn(onclick="$('input[id=myfile]').click();" type='button')
-                Browse
-            %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading..." data-intro="UPLOAD choosen file.")
-      %hr
-      - if @pagenum != 1
-        %ul.pagination.pagination-sm
-          - for page in 1..@pagenum do
-            - if @current == page
-              %li.active
-                %a(href="#")
-                  = page
-            - else
-              %li 
-                %a(href="/gallery/#{page}")
-                  = page
-      .row
-        - @resourceDirs.each_with_index do |d,i|
-          .col-xs-12.col-md-4
-            - if i == 0
-              %a.slidelink(href="" data-intro="COPY iframe tag to clipboard.")
-                %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
-                %font(color="gray")
-                  %i.glyphicon.glyphicon-share
-            - else
-              %a.slidelink(href="")
-                %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
-                %font(color="gray")
-                  %i.glyphicon.glyphicon-share
-            %br
+      .navbar-header
+        %a.navbar-brand(href="#")
+          PPTGallery
+      %ul.nav.navbar-right
+        %li
+          %button.btn.btn-inverse(onClick="introJs().start()" style="background-color:#222")
+            %font(size="5em" color="white")
+              %i.glyphicon.glyphicon-question-sign
+  .container
+    .starter-template
+      %form(action='/upload' method='post' enctype='multipart/form-data')
+        %input(id='myfile' type='file' name='myfile' style='display:none')
+        .input-group
+          %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx file')
+          %span.input-group-btn(data-intro="CHOOSE upload file")
+            %button.btn(onclick="$('input[id=myfile]').click();" type='button')
+              Browse
+          %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading..." data-intro="UPLOAD choosen file.")
+    %hr
+    - if @pagenum != 1
+      %ul.pagination.pagination-sm
+        - for page in 1..@pagenum do
+          - if @current == page
+            %li.active
+              %a(href="#")
+                = page
+          - else
+            %li 
+              %a(href="/gallery/#{page}")
+                = page
+    .row
+      - @resourceDirs.each_with_index do |d,i|
+        .col-xs-12.col-md-4
+          - if i == 0
+            %a.slidelink(href="" data-intro="COPY iframe tag to clipboard.")
+              %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
+              %font(color="gray")
+                %i.glyphicon.glyphicon-share
+          - else
+            %a.slidelink(href="")
+              %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
+              %font(color="gray")
+                %i.glyphicon.glyphicon-share
+          %br
+          %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
+            %img.img-thumbnail(src="#{d}png/page001.png" width="360px" height="240px")
+          %form(method='post' action="/delete")
+            %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
+              ppt
+            \/ 
+            %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")
+              pdf
+            \/ 
             %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
-              %img.img-thumbnail(src="#{d}png/page001.png" width="360px" height="240px")
-            %form(method='post' action="/delete")
-              %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
-                ppt
-              \/ 
-              %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")
-                pdf
-              \/ 
-              %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
-                html
-              \/
-              %input(type="hidden" name="_method" value="delete")
-              %input(type="hidden" name="target" value="#{d}")
-              %button.btn.btn-link.btn-xs(type="submit" style="border:none;" id='delete')
-                %font(color="red")
-                  %i.glyphicon.glyphicon-remove-sign
-
-    %script(src='https://code.jquery.com/jquery-1.10.2.min.js')
-    %script(src='/js/bootstrap.js')
-    %script(type='text/javascript')
-      $('input[id=myfile]').change(function() { |
-        $('#selectFile').val($(this).val()); |
-      });
-    %script(type='text/javascript')
-      function getExtension(fileName) { |
-        if(!fileName) { return null; } |
-        var fileTypes = fileName.split("."); |
-        var len = fileTypes.length; |
-        if(len === 0){ return null; } |
-        return fileTypes[len -1 ].toLowerCase(); |
-      }; |
-      $("input:submit").click(function() { |
-        if($("#selectFile").val().length === 0) { |
-          alert("Please select file"); |
-          return false; |
-        } |
-        var ext = getExtension($("#selectFile").val()); |
-        if(ext === "ppt" || ext === "pptx") { |
-          return true; |
-        } else { |
-          alert("Please select ppt/pptx file"); |
-          return false; |
-        }; |
-      }); 
-    %script(type='text/javascript')
-      $("button[id=delete]").click(function() { |
-        if(window.confirm('Delete this slide?')) { |
-          return true; |
-        } else { |
-          return false; |
-        } |
-      }); 
-    %script(src='/js/jquery.zclip.min.js')
-    %script(type='text/javascript')
-      $('a.slidelink').on('click', function(e) { |
-        e.preventDefault(); |
-      }).each(function() { |
-        $(this).zclip({ |
-          path: '/js/ZeroClipboard.swf', |
-          copy: '#iframe(http://' + location.host + $(this).children('input.zclip').val() + ', style="width:100%, height="600px", iestyle="width:100%, height:600px")' |
-        }); |
-      }); |
-    %script(src='/js/intro.js')
+              html
+            \/
+            %input(type="hidden" name="_method" value="delete")
+            %input(type="hidden" name="target" value="#{d}")
+            %button.btn.btn-link.btn-xs(type="submit" style="border:none;" id='delete')
+              %font(color="red")
+                %i.glyphicon.glyphicon-remove-sign
