@@ -7,13 +7,28 @@
       p#box1 { display: block; } |
       .prev { position: absolute; left: -20px; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(0,0,0,1), rgba(255,255,255,0)); background: -webkit-gradient(linear, left, right, from(rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));} |
       .next { position: absolute; right: 0; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(0,0,0,0.5)); background: -webkit-gradient(linear, left, right, from(rgba(255,255,255,0)), to(rgba(0,0,0,0.5)));} |
+      #controller{ width: 50%; color: black; text-align: center; position: fixed; top: 93%; left: 25%; background: rgba(255,255,255,0.5); z-index: 10; } |
+    %link(href="/css/bootstrap.min.css" rel="stylesheet")
     %title
       HAML Test
   %body
     #wrapper(align="center")
       - images.each_with_index do |image, index|
         %p.boxes{:id => (index == 0 ? 'box1' : nil)}
-          %img(src="#{image}")
+          %img(src="#{image}" id="page#{index}")
+    #controller
+      %button.btn.btn-inverse(style="background-color:#222" onClick="goFirst()")
+        %font(size="2em" color="white" weight="150%")
+          %i.glyphicon.glyphicon-fast-backward |
+      %button.btn.btn-inverse(style="background-color:#222" onClick="goPrev()")
+        %font(size="2em" color="white")
+          %i.glyphicon.glyphicon-backward |
+      %button.btn.btn-inverse(style="background-color:#222" onClick="goNext()")
+        %font(size="2em" color="white")
+          %i.glyphicon.glyphicon-forward |
+      %button.btn.btn-inverse(style="background-color:#222" onClick="goLast()")
+        %font(size="2em" color="white")
+          %i.glyphicon.glyphicon-fast-forward |
     %input.prev(type="button" value=" ")
     %input.next(type="button" value=" ")
     %script(src="http://code.jquery.com/jquery.min.js")
@@ -26,22 +41,25 @@
       $(document).ready( function() { |
         resize(wrapper.find("p:visible").children("img")); |
       }); |
-      $("input:button.next").click(function() { |
-        var next = wrapper.find("p:visible").next(); |
-        if(next.length != 0) { |
-          wrapper.find("p:visible").fadeOut("fast", function() { |
-            next.fadeIn("fast"); |
-            resize(next.children("img")); |
+      function go(page) { |
+        var now = wrapper.find("p:visible"); |
+        if($('div#wrapper p').index(page) != $('div#wrapper p').index(now)) { |
+          now.fadeOut("fast", function() { |
+            page.fadeIn("fast"); |
+            resize(page.children("img")); |
           }); |
         } |
-      }); |
+      }; |
       $("input:button.prev").click(function() { |
         var prev = wrapper.find("p:visible").prev(); |
         if(prev.length != 0){ |
-          wrapper.find("p:visible").fadeOut("fast", function() { |
-            prev.fadeIn("fast"); |
-            resize(prev.children("img")); |
-          }); |
+          go(prev); |
+        } |
+      }); |
+      $("input:button.next").click(function() { |
+        var next = wrapper.find("p:visible").next(); |
+        if(next.length != 0){ |
+          go(next); |
         } |
       }); |
       $("input.next,input.prev").hover( function() { |
@@ -51,3 +69,20 @@
       }, function(){ |
         $(this).css('opacity', '0'); |
       }); |
+      function goFirst(){ |
+        var first = wrapper.find('p:first'); |
+        go(first); |
+      } |
+      function goprev(){ |
+        var prev = wrapper.find('p:visible').prev(); |
+        go(prev); |
+      } |
+      function goNext(){ |
+        var next = wrapper.find('p:visible').next(); |
+        go(next); |
+      } |
+      function goLast(){ |
+        var last = wrapper.find('p:last'); |
+        go(last); |
+      } |
+        
