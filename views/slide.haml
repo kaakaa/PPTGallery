@@ -11,11 +11,9 @@
       HAML Test
   %body
     #wrapper(align="center")
-      %p#box1.boxes
-        %img(src="#{images[0]}")
-      - images.drop(1).each do |i|
-        %p.boxes
-          %img(src="#{i}")
+      - images.each_with_index do |image, index|
+        %p.boxes{:id => (index == 0 ? 'box1' : nil)}
+          %img(src="#{image}")
     %input.prev(type="button" value=" ")
     %input.next(type="button" value=" ")
     %script(src="http://code.jquery.com/jquery.min.js")
