@@ -34,6 +34,7 @@
     .row
       - @resourceDirs.each_with_index do |d,index|
         .col-xs-12.col-md-4
+          = Date.strptime(d.split('/')[-1].split('_')[0],'%Y%m%d%H%M%S')
           %a.slidelink(href=""){:"data-intro" => (index == 0 ? 'COPY iframe tag to clipboard.' : nil)}
             %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
             %font(color="gray")
