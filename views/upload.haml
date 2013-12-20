@@ -114,11 +114,12 @@
       }); 
     %script(src='/js/jquery.zclip.min.js')
     %script(type='text/javascript')
-      $(document).ready(function() { |
-        var elem = $('a.slidelink'); |
-        elem.zclip({ |
+      $('a.slidelink').on('click', function(e) { |
+        e.preventDefault(); |
+      }).each(function() { |
+        $(this).zclip({ |
           path: '/js/ZeroClipboard.swf', |
-          copy: '#iframe(http://' + location.host + elem.children('input.zclip').val() + ', style="width:100%, height="600px", iestyle="width:100%, height:600px")' |
+          copy: '#iframe(http://' + location.host + $(this).children('input.zclip').val() + ', style="width:100%, height="600px", iestyle="width:100%, height:600px")' |
         }); |
-      });
+      }); |
     %script(src='/js/intro.js')
