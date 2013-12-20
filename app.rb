@@ -37,13 +37,15 @@ post "/upload" do
 	filename = params['myfile'][:filename].split('.')[0]
 	dirname = "#{Time.now.strftime('%Y%m%d%H%M%S')}_#{filename}_#{ext}"
 
-	uploadedFile = UploadedFile.new(dirname)
-	uploadedFile.savePpt(params['myfile'][:tempfile])
-
-	uploadedFile.savePdf()
-	uploadedFile.savePng()
-	uploadedFile.makeHtml()
-
+	begin
+		uploadedFile = UploadedFile.new(dirname)
+		uploadedFile.savePpt(params['myfile'][:tempfile])
+		uploadedFile.savePdf()
+		uploadedFile.savePng()
+		uploadedFile.makeHtml()
+	rescue
+		deleteUploaded(dirname)
+	end
 	redirect '/gallery/1'
 end
 
