@@ -38,12 +38,19 @@ post "/upload" do
 	dirname = "#{Time.now.strftime('%Y%m%d%H%M%S')}_#{filename}_#{ext}"
 
 	begin
+		MyLogger.log.info "#{request.ip} : Start converting #{dirname}/#{params['myfile'][:filename]}"
 		uploadedFile = UploadedFile.new(dirname)
 		uploadedFile.savePpt(params['myfile'][:tempfile])
+		MyLogger.log.info "#{request.ip} : #{params['myfile'][:filename]} saved."
 		uploadedFile.savePdf()
+		MyLogger.log.info "#{request.ip} : Complete converting to PDF."
 		uploadedFile.savePng()
+		MyLogger.log.info "#{request.ip} : Complete converting to PNG."
 		uploadedFile.makeHtml()
+		MyLogger.log.info "#{request.ip} : Complete making HTML."
+		MyLogger.log.info "#{request.ip} : Complete uploading."
 	rescue
+		MyLogger.log.error "#{request.ip} : Failing Upload to #{dirname}/#{params['myfile'][:filename]}"
 		deleteUploaded(dirname)
 	end
 	redirect '/gallery/1'
@@ -60,8 +67,9 @@ get '/rss' do
 end
 
 delete "/delete" do
-	MyLogger.log.info "#{request.ip} : Delete #{params['target']}"
+	MyLogger.log.info "#{request.ip} : Deleting #{params['target']}"
 	deleteUploaded(params['target'])
+	MyLogger.log.info "#{request.ip} : Complete deleting #{params['target']}"
 	redirect '/gallery/1'
 end
 

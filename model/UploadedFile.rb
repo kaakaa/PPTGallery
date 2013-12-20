@@ -10,16 +10,12 @@ class UploadedFile
 	end
 
 	def savePpt(uploadedFile)
-		MyLogger.log.info "#{request.ip} : Start saving ppt in #{uploadedDirPath}"
 		File.open(uploadedFilePath, "w") do |f|
 			f.write(uploadedFile.read)
 		end
-		MyLogger.log.info "#{request.ip} : Finish saving ppt in #{uploadedDirPath}"
 	end
 
 	def savePdf
-		MyLogger.log.info "#{request.ip} : Start converting to PDF in #{uploadedDirPath}"
-
 		home = File.join(File.dirname(__FILE__), '..')
 		pdfPath = File.join(uploadedDirPath, "#{@filename}.pdf")
 		date = "java -jar #{home}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}"
@@ -37,29 +33,19 @@ class UploadedFile
 			MyLogger.log.info "STDOUT: #{stdout}"
 			MyLogger.log.info "STERRT: #{stderr}"
 		end
-
-		MyLogger.log.info "#{request.ip} : Finish converting to PDF in #{uploadedDirPath}"
 	end
 
 	def savePng
 		home = File.join(File.dirname(__FILE__), '..')
 		Dir.mkdir(File.join(uploadedDirPath, "png"))
-		
-		MyLogger.log.info "#{request.ip} : Start converting to PNG in #{uploadedDirPath}"
-
 		pdf = File.join(uploadedDirPath, "#{@filename}.pdf")
 		pdf_magick = Magick::ImageList.new(pdf){ self.density = 150 }
 		pdf_magick.each_with_index { |val, index|
 			pdf_magick[index].write(File.join(uploadedDirPath, "png", "page#{format("%03d", index+1)}.png"))
 		}
-
-		MyLogger.log.info "#{request.ip} : Finish converting to PNG in #{uploadedDirPath}"
-
 	end
 
 	def makeHtml
-		MyLogger.log.info "#{request.ip} : Start making HTML in #{uploadedDirPath}"
-
 		home = File.join(File.dirname(__FILE__), '..')
 		images = Array.new
 		Dir.glob(File.join(uploadedDirPath, "png", "*.png")).sort!.each{ |d|
@@ -70,8 +56,6 @@ class UploadedFile
 			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images)
 		end
 		File.write(File.join(uploadedDirPath, "#{@filename}.html"), engine) if !engine.nil?
-
-		MyLogger.log.info "#{request.ip} : Finish making HTML in #{uploadedDirPath}"
 	end
 	
 	def uploadedFilePath
