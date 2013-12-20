@@ -16,7 +16,7 @@ get '/' do
 end
 
 get '/gallery/:page' do
-	MyLogger.log.info "Access in #{params[:page]} page"
+	MyLogger.log.info "#{request.ip} : Access in page #{params[:page]}"
 	home = File.dirname(__FILE__)
 	Dir.mkdir(File.join(home, 'uploads')) if !Dir.exists?(File.join(home, 'uploads'))
 	dirs = Dir.glob(File.join(home, "uploads","*")).sort.reverse
@@ -32,6 +32,7 @@ end
 
 post "/upload" do
 	# uplod dir name is "#{Datetime}_#{UploadedFilename}_#{ext}"
+	MyLogger.log.info "#{request.ip} : Upload file #{params['myfile'][:filename]}"
 	ext = params['myfile'][:filename].split('.')[-1]
 	filename = params['myfile'][:filename].split('.')[0]
 	dirname = "#{Time.now.strftime('%Y%m%d%H%M%S')}_#{filename}_#{ext}"
@@ -56,15 +57,12 @@ get '/rss' do
 	builder :rss
 end
 
-post "/delete" do
+delete "/delete" do
+	MyLogger.log.info "#{request.ip} : Delete #{params['target']}"
 	deleteUploaded(params['target'])
 	redirect '/gallery/1'
 end
 
-delete "/delete" do
-	deleteUploaded(params['target'])
-	redirect '/gallery/1'
-end
 helpers do
 	def deleteUploaded(path)
 		FileUtils.rm_r(Dir.glob(File.join(File.dirname(__FILE__), path, "**", "*.*")), {:force=>true})
