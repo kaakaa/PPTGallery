@@ -25,7 +25,7 @@ get '/gallery/:page' do
 	dirs[(page-1)*15..page*15-1].each{ |d|
 		@resourceDirs << "#{d.gsub!(/#{home}/,'')}/"
 	}
-	@pagenum = (dirs.size() / 15) + 1
+	@pagenum = dirs.size() % 15 == 0? dirs.size() / 15 : (dirs.size() / 15) + 1
 	@current = params[:page].to_i
 	haml :upload
 end
