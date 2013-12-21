@@ -23,6 +23,7 @@
       %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goPrev()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-backward |
+      %span#pageNumber.btn
       %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goNext()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-forward |
@@ -38,7 +39,12 @@
         var scale = Math.min($(window).width() / page.width(), $(window).height() / page.height()); |
         page.width(page.width() * scale); |
       }; |
+      function setPageNumber(current) { |
+        var allNumber = wrapper.find("p").size(); |
+        $("span#pageNumber").text((current + 1) + '/' + allNumber); |
+      }; |
       $(document).ready( function() { |
+        setPageNumber(0); |
         resize(wrapper.find("p:visible").children("img")); |
       }); |
       function go(page) { |
@@ -48,6 +54,7 @@
             page.fadeIn("fast"); |
             resize(page.children("img")); |
           }); |
+          setPageNumber($('div#wrapper p').index(page)); |
         } |
       }; |
       $("input:button.prev").click(function() { |
@@ -73,13 +80,17 @@
         var first = wrapper.find('p:first'); |
         go(first); |
       } |
-      function goprev(){ |
+      function goPrev(){ |
         var prev = wrapper.find('p:visible').prev(); |
-        go(prev); |
+        if(prev.length != 0) { |
+          go(prev); |
+        } |
       } |
       function goNext(){ |
         var next = wrapper.find('p:visible').next(); |
-        go(next); |
+        if(next.length != 0) { |
+          go(next); |
+        } |
       } |
       function goLast(){ |
         var last = wrapper.find('p:last'); |
