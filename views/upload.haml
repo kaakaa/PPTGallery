@@ -34,22 +34,22 @@
             %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
               %i.glyphicon.glyphicon-share
           %a.downloads(href="" title="Downloads" data-html="true" data-placement="bottom" data-content=""){:"data-intro" => (index == 0 ? 'DOWNLOAD updated or converted files' : nil)}
-            %i.glyphicon.glyphicon-download
+            %i.glyphicon.glyphicon-download 
+          %form.delete_form(method='post' action="/delete" style="display: inline;")
+            %input(type="hidden" name="_method" value="delete")
+            %input(type="hidden" name="target" value="#{d}")
+            %a.delete(href="#")
+              %font(color="red")
+                %i.glyphicon.glyphicon-remove-sign 
           %br
           %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
             %img.img-thumbnail(src="#{d}png/page001.png" width="360px" height="240px")
           .popover_content(style='display: none;')
-            %form(method='post' action="/delete")
-              %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
-                PPT
-              %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")
-                PDF
-              %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
-                HTML
-              %input(type="hidden" name="_method" value="delete")
-              %input(type="hidden" name="target" value="#{d}")
-              %button.btn.btn-xs.btn-danger(type="submit" style="border:none;" id='delete')
-                DELETE
+            %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
+              PPT
+            %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")= "PDF"
+            %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
+              HTML
   - if @pagenum != 1
     %ul.pagination.pagination-sm
       - for page in 1..@pagenum do
