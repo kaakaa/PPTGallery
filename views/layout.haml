@@ -66,13 +66,21 @@
       }); |
     %script(src='/js/intro.js')
     %script(type='text/javascript')
-      $('a.downloads').on('click', function(e) { |
+      $('a.downloads_popover').on('click', function(e) { |
         e.preventDefault(); |
       }).each(function() { |
-        var index = $('a.downloads').index($(this)); |
+        var index = $('a.downloads_popover').index($(this)); |
         $(this).popover({ |
           content: function(){ |
             return $('.popover_content').eq(index).html(); |
+          } |
+        }); |
+      }); |
+      $(':not(#anything)').on('click',function(e) { |
+        $('.downloads_popover').each(function() { |
+          if(!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.downloads_popover').has(e.target).length === 0) { |
+            $(this).popover('hide'); |
+            return ; |
           } |
         }); |
       }); |

@@ -33,7 +33,7 @@
           %a.slidelink(href=""){:"data-intro" => (index == 0 ? 'COPY iframe tag to clipboard.' : nil)}
             %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
               %i.glyphicon.glyphicon-share
-          %a.downloads(href="" title="Downloads" data-html="true" data-placement="bottom" data-content=""){:"data-intro" => (index == 0 ? 'DOWNLOAD updated or converted files' : nil)}
+          %a.downloads_popover(href="" title="Downloads" data-html="true" data-placement="bottom" data-content=""){:"data-intro" => (index == 0 ? 'DOWNLOAD updated or converted files' : nil)}
             %i.glyphicon.glyphicon-download 
           %form.delete_form(method='post' action="/delete" style="display: inline;")
             %input(type="hidden" name="_method" value="delete")
