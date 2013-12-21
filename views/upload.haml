@@ -22,14 +22,9 @@
   - if @pagenum != 1
     %ul.pagination.pagination-sm
       - for page in 1..@pagenum do
-        - if @current == page
-          %li.active
-            %a(href="#")
-              = page
-        - else
-          %li 
-            %a(href="/gallery/#{page}")
-              = page
+        %li{:class => (@current == page ? 'active' : nil)}
+          %a{:href => (@current == page ? '#' : "/gallery/#{page}")}
+            = page
   .row
     - @resourceDirs.each_with_index do |d,index|
       .col-xs-12.col-md-4
@@ -57,3 +52,9 @@
             %button.btn.btn-link.btn-xs(type="submit" style="border:none;" id='delete')
               %font(color="red")
                 %i.glyphicon.glyphicon-remove-sign
+  - if @pagenum != 1
+    %ul.pagination.pagination-sm
+      - for page in 1..@pagenum do
+        %li{:class => (@current == page ? 'active' : nil)}
+          %a{:href => (@current == page ? '#' : "/gallery/#{page}")}
+            = page
