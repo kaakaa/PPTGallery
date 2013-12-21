@@ -1,39 +1,39 @@
-%body
-  .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
-    .container
-      .navbar-header
-        %a.navbar-brand(href="#")
-          PPTGallery
-      %ul.nav.navbar-right
-        %li
-          %button.btn.btn-inverse(onClick="introJs().start()" style="background-color:#222")
-            %font(size="5em" color="white")
-              %i.glyphicon.glyphicon-question-sign
+.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
   .container
-    .starter-template
-      %form(action='/upload' method='post' enctype='multipart/form-data')
-        %input(id='myfile' type='file' name='myfile' style='display:none')
-        .input-group
-          %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx file')
-          %span.input-group-btn(data-intro="CHOOSE upload file")
-            %button.btn(onclick="$('input[id=myfile]').click();" type='button')
-              Browse
-          %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading..." data-intro="UPLOAD choosen file.")
-    %hr
-    - if @pagenum != 1
-      %ul.pagination.pagination-sm
-        - for page in 1..@pagenum do
-          - if @current == page
-            %li.active
-              %a(href="#")
-                = page
-          - else
-            %li 
-              %a(href="/gallery/#{page}")
-                = page
-    .row
-      - @resourceDirs.each_with_index do |d,index|
-        .col-xs-12.col-md-4
+    .navbar-header
+      %a.navbar-brand(href="#")
+        PPTGallery
+    %ul.nav.navbar-right
+      %li
+        %button.btn.btn-inverse(onClick="introJs().start()" style="background-color:#222")
+          %font(size="5em" color="white")
+            %i.glyphicon.glyphicon-question-sign
+.container
+  .starter-template
+    %form(action='/upload' method='post' enctype='multipart/form-data')
+      %input(id='myfile' type='file' name='myfile' style='display:none')
+      .input-group
+        %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx file')
+        %span.input-group-btn(data-intro="CHOOSE upload file")
+          %button.btn(onclick="$('input[id=myfile]').click();" type='button')
+            Browse
+        %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading..." data-intro="UPLOAD choosen file.")
+  %hr
+  - if @pagenum != 1
+    %ul.pagination.pagination-sm
+      - for page in 1..@pagenum do
+        - if @current == page
+          %li.active
+            %a(href="#")
+              = page
+        - else
+          %li 
+            %a(href="/gallery/#{page}")
+              = page
+  .row
+    - @resourceDirs.each_with_index do |d,index|
+      .col-xs-12.col-md-4
+        .gallery
           = Date.strptime(d.split('/')[-1].split('_')[0],'%Y%m%d%H%M%S')
           %a.slidelink(href=""){:"data-intro" => (index == 0 ? 'COPY iframe tag to clipboard.' : nil)}
             %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
