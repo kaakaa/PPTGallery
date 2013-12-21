@@ -44,14 +44,6 @@
           return false; |
         }; |
       }); 
-    %script(type='text/javascript')
-      $("button[id=delete]").click(function() { |
-        if(window.confirm('Delete this slide?')) { |
-          return true; |
-        } else { |
-          return false; |
-        } |
-      }); 
     %script(src='/js/jquery.zclip.min.js')
     %script(type='text/javascript')
       $('a.slidelink').on('click', function(e) { |
@@ -64,9 +56,13 @@
         }); |
       }); |
       $('a.delete').click(function() { |
-        var index = $('a.delete').index($(this)); |
-        var parent = $('form.delete_form').eq(index); |
-        parent.submit(); |
+        if(window.confirm('Delete this slide?')) { |
+          var index = $('a.delete').index($(this)); |
+          var parent = $('form.delete_form').eq(index); |
+          parent.submit(); |
+        } else { |
+          return false; |
+        } |
       }); |
     %script(src='/js/intro.js')
     %script(type='text/javascript')
