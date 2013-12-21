@@ -15,18 +15,18 @@
     #wrapper(align="center")
       - images.each_with_index do |image, index|
         %p.boxes{:id => (index == 0 ? 'box1' : nil)}
-          %img(src="#{image}" id="page#{index}")
+          %img(src="#{image}")
     #controller
-      %button.btn.btn-inverse(style="background-color:#222" onClick="goFirst()")
+      %button.btn.btn-inverse(style="background: rgba(0,0,0,0.5)" onClick="goFirst()")
         %font(size="2em" color="white" weight="150%")
           %i.glyphicon.glyphicon-fast-backward |
-      %button.btn.btn-inverse(style="background-color:#222" onClick="goPrev()")
+      %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goPrev()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-backward |
-      %button.btn.btn-inverse(style="background-color:#222" onClick="goNext()")
+      %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goNext()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-forward |
-      %button.btn.btn-inverse(style="background-color:#222" onClick="goLast()")
+      %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goLast()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-fast-forward |
     %input.prev(type="button" value=" ")
