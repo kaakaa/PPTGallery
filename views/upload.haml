@@ -1,7 +1,7 @@
 .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
   .container
     .navbar-header
-      %a.navbar-brand(href="#")
+      %a.navbar-brand(href="/")
         PPTGallery
     %ul.nav.navbar-right
       %li
@@ -34,24 +34,27 @@
             %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
             %font(color="gray")
               %i.glyphicon.glyphicon-share
+          %a.downloads(href="" title="Downloads" data-html="true" data-placement="bottom"){:"data-content" => ""}
+            %i.glyphicon.glyphicon-share
           %br
           %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
             %img.img-thumbnail(src="#{d}png/page001.png" width="360px" height="240px")
-          %form(method='post' action="/delete"){:"data-intro" => (index == 0 ? 'DOWNLOAD updated or converted files' : nil)}
-            %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
-              ppt
-            \/ 
-            %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")
-              pdf
-            \/ 
-            %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
-              html
-            \/
-            %input(type="hidden" name="_method" value="delete")
-            %input(type="hidden" name="target" value="#{d}")
-            %button.btn.btn-link.btn-xs(type="submit" style="border:none;" id='delete')
-              %font(color="red")
-                %i.glyphicon.glyphicon-remove-sign
+          .popover_content(style='display: none;')
+            %form(method='post' action="/delete"){:"data-intro" => (index == 0 ? 'DOWNLOAD updated or converted files' : nil)}
+              %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
+                ppt
+              \/ 
+              %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")
+                pdf
+              \/ 
+              %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
+                html
+              \/
+              %input(type="hidden" name="_method" value="delete")
+              %input(type="hidden" name="target" value="#{d}")
+              %button.btn.btn-link.btn-xs(type="submit" style="border:none;" id='delete')
+                %font(color="red")
+                  %i.glyphicon.glyphicon-remove-sign
   - if @pagenum != 1
     %ul.pagination.pagination-sm
       - for page in 1..@pagenum do

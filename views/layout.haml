@@ -63,3 +63,14 @@
         }); |
       }); |
     %script(src='/js/intro.js')
+    %script(type='text/javascript')
+      $('a.downloads').on('click', function(e) { |
+        e.preventDefault(); |
+      }).each(function() { |
+        var index = $('a.downloads').index($(this)); |
+        $(this).popover({ |
+          content: function(){ |
+            return $('.popover_content').eq(index).html(); |
+          } |
+        }); |
+      }); |
