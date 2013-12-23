@@ -18,6 +18,9 @@
           %button.btn(onclick="$('input[id=myfile]').click();" type='button')
             Browse
         %input.btn.btn-primary(id='upload' type='submit' value='Upload' data-loading-text="Uploading..." data-intro="UPLOAD choosen file.")
+      .modal-dialog(style="display: none; position: absolute;")
+        .modal-content
+          .modal-body= "Uploading&hellip;"
   %hr
   - if @pagenum != 1
     %ul.pagination.pagination-sm
