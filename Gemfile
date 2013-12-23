@@ -11,3 +11,7 @@ gem 'haml'
 gem 'rack'
 gem 'rmagick'
 gem 'systemu'
+
+group :test do
+	gem 'rspec'
+end
