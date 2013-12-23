@@ -17,6 +17,7 @@ class UploadedFile
 	def savePdf
 		home = File.join(File.dirname(__FILE__), '..')
 		pdfPath = File.join(uploadedDirPath, "#{@filename}.pdf")
+                p uploadedFilePath
 		`java -jar #{home}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}`
 	end
 
