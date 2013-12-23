@@ -1,0 +1,85 @@
+!!!
+%html
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(name="description" content="")
+    %meta(name="author" content="")
+
+    %link(href="/css/bootstrap.min.css" rel="stylesheet")
+    %link(href="/css/starter-template.css" rel="stylesheet")
+    %link(href="/css/introjs.css" rel="stylesheet")
+    %style(type="text/css")
+      div.gallery { margin-bottom: 50px; }
+    %title
+      PPTGallery
+  %body
+    = yield
+
+    %script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    %script(src='/js/bootstrap.js')
+    %script(type='text/javascript')
+      $('input[id=myfile]').change(function() { |
+        $('#selectFile').val($(this).val()); |
+      });
+    %script(type='text/javascript')
+      function getExtension(fileName) { |
+        if(!fileName) { return null; } |
+        var fileTypes = fileName.split("."); |
+        var len = fileTypes.length; |
+        if(len === 0){ return null; } |
+        return fileTypes[len -1 ].toLowerCase(); |
+      }; |
+      $("input:submit").click(function() { |
+        if($("#selectFile").val().length === 0) { |
+          alert("Please select file"); |
+          return false; |
+        } |
+        var ext = getExtension($("#selectFile").val()); |
+        if(ext === "ppt" || ext === "pptx") { |
+          return true; |
+        } else { |
+          alert("Please select ppt/pptx file"); |
+          return false; |
+        }; |
+      }); 
+    %script(src='/js/jquery.zclip.min.js')
+    %script(type='text/javascript')
+      $('a.slidelink').on('click', function(e) { |
+        e.preventDefault(); |
+      }).each(function() { |
+        $(this).zclip({ |
+          path: '/js/ZeroClipboard.swf', |
+           copy: '#iframe(http://' + location.host + $(this).children('input.zclip').val() + ', style="width:100%, height="600px", iestyle="width:100%, height:600px")' |
+        }); |
+      }); |
+      $('a.delete').click(function() { |
+        if(window.confirm('Delete this slide?')) { |
+          var index = $('a.delete').index($(this)); |
+          var parent = $('form.delete_form').eq(index); |
+          parent.submit(); |
+        } else { |
+          return false; |
+        } |
+      }); |
+    %script(src='/js/intro.js')
+    %script(type='text/javascript')
+      $('a.downloads_popover').on('click', function(e) { |
+        e.preventDefault(); |
+      }).each(function() { |
+        var index = $('a.downloads_popover').index($(this)); |
+        $(this).popover({ |
+          content: function(){ |
+            return $('.popover_content').eq(index).html(); |
+          } |
+        }); |
+      }); |
+      $(':not(#anything)').on('click',function(e) { |
+        $('.downloads_popover').each(function() { |
+          if(!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.downloads_popover').has(e.target).length === 0) { |
+            $(this).popover('hide'); |
+            return ; |
+          } |
+        }); |
+      }); |

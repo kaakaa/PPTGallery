@@ -1,5 +1,6 @@
 ﻿require 'RMagick'
 require 'haml'
+require 'systemu'
 
 class UploadedFile
 
@@ -17,16 +18,26 @@ class UploadedFile
 	def savePdf
 		home = File.join(File.dirname(__FILE__), '..')
 		pdfPath = File.join(uploadedDirPath, "#{@filename}.pdf")
-                p uploadedFilePath
-		`java -jar #{home}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}`
+		date = "java -jar #{home}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}"
+		status, stdout, stderr = systemu date
+		if status.nil? then
+			MyLogger.log.error "JODConverter is stopped by someone!"
+		elsif status.exitstatus != 0 then
+			MyLogger.log.error "Converting to PDF by JODConverter is failed."
+			MyLogger.log.error "Exit Code: #{status}"
+			MyLogger.log.error "STDOUT: #{stdout}"
+			MyLogger.log.error "STERRT: #{stderr}"
+		else
+			MyLogger.log.info "Converting to PDF by JODConverter is success!"
+			MyLogger.log.info "Exit Code: #{status}"
+			MyLogger.log.info "STDOUT: #{stdout}"
+			MyLogger.log.info "STERRT: #{stderr}"
+		end
 	end
 
 	def savePng
 		home = File.join(File.dirname(__FILE__), '..')
 		Dir.mkdir(File.join(uploadedDirPath, "png"))
-		
-		# make pdf file path
-		# TODO extract method
 		pdf = File.join(uploadedDirPath, "#{@filename}.pdf")
 		pdf_magick = Magick::ImageList.new(pdf){ self.density = 150 }
 		pdf_magick.each_with_index { |val, index|
