@@ -29,30 +29,28 @@
           %a{:href => (@current == page ? '#' : "/gallery/#{page}")}
             = page
   .row
-    - @resourceDirs.each_with_index do |d,index|
+    - @metaDataArray.each_with_index do |meta,index|
       .col-xs-12.col-md-4
         .gallery
-          = Date.strptime(d.split('/')[-1].split('_')[0],'%Y%m%d%H%M%S')
+          = meta.created_at
           %a.slidelink(href=""){:"data-intro" => (index == 0 ? 'COPY iframe tag to clipboard.' : nil)}
-            %input.zclip(type="hidden" value="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html")
+            %input.zclip(type="hidden" value="#{meta.htmlPath}")
               %i.glyphicon.glyphicon-share
           %a.downloads_popover(href="" title="Downloads" data-html="true" data-placement="bottom" data-content=""){:"data-intro" => (index == 0 ? 'DOWNLOAD uploaded and converted files' : nil)}
-            %i.glyphicon.glyphicon-download 
+            %i.glyphicon.glyphicon-download
           %form.delete_form(method='post' action="/delete" style="display: inline;"){:"data-intro" => (index == 0 ? 'DELETE uploaded and converted files' : nil)}
             %input(type="hidden" name="_method" value="delete")
-            %input(type="hidden" name="target" value="#{d}")
+            %input(type="hidden" name="target" value="#{meta.dirname}")
             %a.delete(href="#")
               %font(color="red")
                 %i.glyphicon.glyphicon-remove-sign 
           %br
-          %a(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
-            %img.img-thumbnail(src="#{d}png/page001.png" width="360px" height="240px")
+          %a(href="#{meta.htmlPath}" target="blank")
+            %img.img-thumbnail(src="#{meta.thumnailPath}" width="360px" height="240px")
           .popover_content(style='display: none;')
-            %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.#{d.split('_')[-1].chop!}")
-              PPT
-            %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.pdf")= "PDF"
-            %a.btn.btn-xs.btn-primary(href="#{d}#{d.split('/')[-1].split('_')[1..-2].join('_')}.html" target="blank")
-              HTML
+            %a.btn.btn-xs.btn-primary(href="#{meta.relativePath}")= "#{meta.ext.upcase}"
+            %a.btn.btn-xs.btn-primary(href="#{meta.pdfPath}")= "PDF"
+            %a.btn.btn-xs.btn-primary(href="#{meta.htmlPath}" target="blank")= "HTML"
   - if @pagenum != 1
     %ul.pagination.pagination-sm
       - for page in 1..@pagenum do
