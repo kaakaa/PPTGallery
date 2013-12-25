@@ -66,7 +66,6 @@ class UploadedFile
 	def uploadedDirPath
 		targetDirPath = File.join(@home, @meta.dirname)
 		Dir.mkdir(targetDirPath) if !Dir.exist?(targetDirPath)
-		MyLogger.log.info "#{targetDirPath}"
 		targetDirPath
 	end
 end

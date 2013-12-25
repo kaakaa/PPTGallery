@@ -83,7 +83,7 @@ helpers do
 	end
 
 	def getMetaDataForDisplay(dirname, page)
- 		dirs = Dir.glob(dirname).sort.reverse
+ 		dirs = Dir.glob("#{dirname}/*/").sort.reverse
                 metaDataArray = Array.new
                 dirs[(page-1)*15..page*15-1].each{ |d|
                         metaDataArray << MetaData.load(d)

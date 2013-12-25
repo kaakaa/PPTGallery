@@ -42,7 +42,17 @@ class MetaData
 		end
 	end
 
-	def self.load(dirname)
-		MetaData.new('currietesting.ppt')
+	def self.load(dirPath)
+		metaFile = File.join(dirPath, '.meta')
+		meta = nil
+		open(metaFile) do |f|
+			meta = JSON.load(f)
+		end
+
+		obj = MetaData.new('a.b')
+		obj.filename = meta['filename']
+		obj.ext = meta['ext']
+		obj.created_at = meta['created_at']
+		return obj
 	end
 end
