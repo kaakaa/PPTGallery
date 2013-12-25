@@ -63,6 +63,11 @@ get '/rss' do
 	dirs[0..15].each{ |d|
 		@posts << Post.new(d.gsub!(/#{home}/,''), "#{request.host}:#{request.port}")
 	}
+	@lastBuildDate = DateTime.parse('2000/1/1')
+	@posts.each{ |p|
+		@lastBuildDate = p.pubDate if  @lastBuildDate < p.pubDate
+	}
+	
 	builder :rss
 end
 
