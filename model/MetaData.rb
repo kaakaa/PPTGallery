@@ -16,7 +16,7 @@ class MetaData
 	end
 
 	def dirname
-		"#{@resourceDir}/#{@filename}"
+		"#{@resourceDir}/#{@created_at}_#{@filename}"
 	end
 
 	def htmlPath
@@ -33,6 +33,13 @@ class MetaData
 
 	def relativePath
 		"#{dirname}/#{@filename}.#{@ext}"
+	end
+
+	def save(homeDir)
+		metaFile = File.join(homeDir, dirname, '.meta')
+		open(metaFile, "w") do |f|
+			JSON.dump({:filename => @filename, :ext => @ext, :created_at => @created_at}, f)
+		end
 	end
 
 	def self.load(dirname)

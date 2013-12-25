@@ -43,9 +43,12 @@ post "/upload" do
 		MyLogger.log.info "#{request.ip} : Complete converting to PNG."
 		uploadedFile.makeHtml()
 		MyLogger.log.info "#{request.ip} : Complete making HTML."
+		uploadedFile.createMetaFile()
+		MyLogger.log.info "#{request.ip} : Complete creating .meta."
 		MyLogger.log.info "#{request.ip} : Complete uploading."
-	rescue
+	rescue => ex
 		MyLogger.log.error "#{request.ip} : Failing Upload to #{meta.filename}"
+		MyLogger.log.error "#{request.ip} : #{ex.message}"
 		deleteUploaded(dirname)
 	end
 	redirect '/gallery/1'

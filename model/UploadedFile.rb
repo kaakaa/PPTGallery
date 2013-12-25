@@ -54,6 +54,10 @@ class UploadedFile
 		end
 		File.write(File.join(uploadedDirPath, "#{@meta.filename}.html"), engine) if !engine.nil?
 	end
+
+	def createMetaFile
+		@meta.save(@home)
+	end
 	
 	def uploadedFilePath
 		File.join(uploadedDirPath, "#{@meta.filename}.#{@meta.ext}")
