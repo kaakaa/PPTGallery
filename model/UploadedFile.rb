@@ -50,7 +50,7 @@ class UploadedFile
 		}
 		engine = nil
 		File.open(File.join(@home, "views", "slide.haml")) do |f|
-			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images)
+			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images, :title => @meta.filename)
 		end
 		File.write(File.join(uploadedDirPath, "#{@meta.filename}.html"), engine) if !engine.nil?
 	end
