@@ -37,7 +37,7 @@ class MetaData
 
 	def save(homeDir)
 		metaFile = File.join(homeDir, dirname, '.meta')
-		open(metaFile, "w") do |f|
+		File.open(metaFile, "w") do |f|
 			JSON.dump({:filename => @filename, :ext => @ext, :created_at => @created_at}, f)
 		end
 	end
@@ -45,14 +45,14 @@ class MetaData
 	def self.load(dirPath)
 		metaFile = File.join(dirPath, '.meta')
 		meta = nil
-		open(metaFile) do |f|
+		File.open(metaFile, 'r') do |f|
 			meta = JSON.load(f)
 		end
 
 		obj = MetaData.new('a.b')
 		obj.filename = meta['filename']
 		obj.ext = meta['ext']
-		obj.created_at = meta['created_at']
+		obj.created_at = meta["created_at"]
 		return obj
 	end
 end
