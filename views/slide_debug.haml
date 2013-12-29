@@ -38,7 +38,7 @@
     .row#allslide
       - @images.each_with_index do |image, index|
         .col-xs-6.col-md-3
-          %button(onClick="goPage(#{index})")
+          %button(onClick="selectPage(#{index})")
             %img(src="#{image}" width="240px")
     %script(src="http://code.jquery.com/jquery.min.js")
     %script(type="text/javascript")
@@ -56,11 +56,11 @@
         resize(wrapper.find("p:visible").children("img")); |
       }); |
       function fadeInAllSlide() { |
-        console.log('fade in'); |
-        $('div#allslide').fadeIn("fast"); |
+        $('div#allslide').fadeToggle(); |
       } |
-      function fadeOutAllSlide() { |
-        $('div#allslide').fadeOut("fast"); |
+      function selectPage(index){ |
+        goPage(index); |
+        fadeOutAllSlide() ; |
       } |
       function go(page) { |
         var now = wrapper.find("p:visible"); |
