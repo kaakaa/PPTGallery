@@ -1,4 +1,4 @@
-﻿!!!
+﻿!!! 5
 %html
   %head
     %meta(charset="utf-8")
@@ -6,9 +6,10 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %style(type="text/css")
       div#wrapper { position: absolute; top: 0; left: 0;  margin: 0 auto; width: 100%;} |
-      div#allslide { display: none; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.7); width: 100%; z-index: 10; padding: 30px 10px; } |
-      .one_of_all_slide { margin-bottom: 40px; text-align: center; } | 
-      p.boxes { display: none; position absolute; z-index: 1;} |
+      div#allslide { display: none; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.7); width: 100%; height: 100%; z-index: 10; padding: 20px; } |
+      .one_of_all_slide { display: block; text-align: center; margin-bottom: 30px; } | 
+      .selected-slide { border: solid 4px red; padding: -4px; margin-bottom: -2px; } |
+      p.boxes { display: none; position absolute; z-index: 1; } |
       p#box1 { display: block; } |
       .prev { position: absolute; left: -20px; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(0,0,0,1), rgba(255,255,255,0)); background: -webkit-gradient(linear, left, right, from(rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));} |
       .next { position: absolute; right: 0; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(0,0,0,0.5)); background: -webkit-gradient(linear, left, right, from(rgba(255,255,255,0)), to(rgba(0,0,0,0.5)));} |
@@ -39,8 +40,7 @@
     .row#allslide
       - @images.each_with_index do |image, index|
         .col-xs-6.col-md-3.one_of_all_slide
-          %button(onClick="selectPage(#{index})")
-            %img(src="#{image}" width="240px")
+          %input(type="image" src="#{image}" width="240px" onClick="selectPage(#{index})")
     %script(src="http://code.jquery.com/jquery.min.js")
     %script(type="text/javascript")
       var wrapper = $("div#wrapper"); |
@@ -55,13 +55,20 @@
       $(document).ready( function() { |
         setPageNumber(0); |
         resize(wrapper.find("p:visible").children("img")); |
+        spotOneInAllSlide(0); |
       }); |
       function spotOneInAllSlide(current) { |
-        $('#allslide .one_of_all_slide').eq(current).children('button').css('border','double 8px red'); |
+        slides = $('#allslide .one_of_all_slide'); |
+        $.each(slides, function(i,val) { |
+          if(i == current){ |
+            $(val).find('input').addClass('selected-slide'); |
+          } else { |
+            $(val).find('input').removeClass('selected-slide'); |
+          } |
+        }); |
       }; |
       function toggleAllSlide() { |
         $('div#allslide').fadeToggle(); |
-        spotOneInAllSlide(5); |
       }; |
       function selectPage(index){ |
         goPage(index); |
@@ -73,6 +80,8 @@
           now.fadeOut("fast", function() { |
             page.fadeIn("fast"); |
             resize(page.children("img")); |
+            current = $('div#wrapper p').index(wrapper.find("p:visible")); |
+            spotOneInAllSlide(current); |
           }); |
           setPageNumber($('div#wrapper p').index(page)); |
         } |
