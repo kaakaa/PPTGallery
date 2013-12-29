@@ -1,17 +1,19 @@
-﻿!!!
+﻿!!! 5
 %html
   %head
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=edge")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %style(type="text/css")
-      div#wrapper { position: relative; margin: 0 auto; } |
-      div#allslide { background-color: rgba(255,255,255,70); }
-      p.boxes { display: none; position absolute; } |
+      div#wrapper { position: absolute; top: 0; left: 0;  margin: 0 auto; width: 100%;} |
+      div#allslide { display: none; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.7); width: 100%; z-index: 10; padding: 20px; } |
+      .one-of-all-slide { display: block; text-align: center; margin-bottom: 30px; } | 
+      .selected-slide { border: solid 4px red; padding: -4px; margin-bottom: -2px; } |
+      p.boxes { display: none; position absolute; z-index: 1; } |
       p#box1 { display: block; } |
       .prev { position: absolute; left: -20px; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(0,0,0,1), rgba(255,255,255,0)); background: -webkit-gradient(linear, left, right, from(rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));} |
       .next { position: absolute; right: 0; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(0,0,0,0.5)); background: -webkit-gradient(linear, left, right, from(rgba(255,255,255,0)), to(rgba(0,0,0,0.5)));} |
-      #controller{ width: 50%; color: black; text-align: center; position: fixed; top: 93%; left: 25%; background: rgba(255,255,255,0.5); z-index: 10; } |
+      #controller{ width: 50%; color: black; text-align: center; position: fixed; top: 93%; left: 25%; background: rgba(255,255,255,0.5); z-index: 100; } |
     %link(href="/css/bootstrap.min.css" rel="stylesheet")
     %title= "#{title}"
   %body
@@ -26,7 +28,7 @@
       %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goPrev()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-backward |
-      %span#pageNumber.btn
+      %button#pageNumber.btn.btn-inverse(onClick="toggleAllSlide()")
       %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goNext()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-forward |
@@ -35,12 +37,10 @@
           %i.glyphicon.glyphicon-fast-forward |
     %input.prev(type="button" value=" ")
     %input.next(type="button" value=" ")
-    #wrapper(align="center")
-      .row#allslide
-        - images.each_with_index do |image, index|
-          .col-xs-6.col-md-3
-            %button(onClick="goPage(#{index})")
-              %img(src="#{image}" width="240px")
+    .row#allslide
+      - images.each_with_index do |image, index|
+        .col-xs-6.col-md-3.one-of-all-slide
+          %input(type="image" src="#{image}" width="240px" onClick="selectPage(#{index})")
     %script(src="http://code.jquery.com/jquery.min.js")
     %script(type="text/javascript")
       var wrapper = $("div#wrapper"); |
@@ -50,18 +50,38 @@
       }; |
       function setPageNumber(current) { |
         var allNumber = wrapper.find("p").size(); |
-        $("span#pageNumber").text((current + 1) + '/' + allNumber); |
+        $("#pageNumber").text((current + 1) + '/' + allNumber); |
       }; |
       $(document).ready( function() { |
         setPageNumber(0); |
         resize(wrapper.find("p:visible").children("img")); |
+        spotOneInAllSlide(0); |
       }); |
+      function spotOneInAllSlide(current) { |
+        slides = $('#allslide .one-of-all-slide'); |
+        $.each(slides, function(i,val) { |
+          if(i == current){ |
+            $(val).find('input').addClass('selected-slide'); |
+          } else { |
+            $(val).find('input').removeClass('selected-slide'); |
+          } |
+        }); |
+      }; |
+      function toggleAllSlide() { |
+        $('div#allslide').fadeToggle(); |
+      }; |
+      function selectPage(index){ |
+        goPage(index); |
+        toggleAllSlide() ; |
+      }; |
       function go(page) { |
         var now = wrapper.find("p:visible"); |
         if($('div#wrapper p').index(page) != $('div#wrapper p').index(now)) { |
           now.fadeOut("fast", function() { |
             page.fadeIn("fast"); |
             resize(page.children("img")); |
+            current = $('div#wrapper p').index(wrapper.find("p:visible")); |
+            spotOneInAllSlide(current); |
           }); |
           setPageNumber($('div#wrapper p').index(page)); |
         } |
