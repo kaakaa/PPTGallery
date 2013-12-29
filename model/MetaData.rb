@@ -8,10 +8,7 @@ require 'json'
 class MetaData
 	attr_accessor :filename, :ext, :created_at
 
-	def initialize(param)
-        	@filename = param.split('.')[0..-2].join('.')
-        	@ext = param.split('.')[-1]
-		@created_at = Time.now.strftime('%Y%m%d%H%M%S')
+	def initialize()
 		@resourceDir = '/uploads'
 	end
 
@@ -35,6 +32,14 @@ class MetaData
 		"#{dirname}/#{@filename}.#{@ext}"
 	end
 
+	def self.create(param)
+		meta = MetaData.new
+        	meta.filename = param.split('.')[0..-2].join('.')
+        	meta.ext = param.split('.')[-1]
+		meta.created_at = Time.now.strftime('%Y%m%d%H%M%S')
+		meta
+	end
+
 	def save(homeDir)
 		metaFile = File.join(homeDir, dirname, '.meta')
 		File.open(metaFile, "w") do |f|
@@ -44,15 +49,15 @@ class MetaData
 
 	def self.load(dirPath)
 		metaFile = File.join(dirPath, '.meta')
-		meta = nil
+		content = nil
 		File.open(metaFile, 'r') do |f|
-			meta = JSON.load(f)
+			content = JSON.load(f)
 		end
 
-		obj = MetaData.new('a.b')
-		obj.filename = meta['filename']
-		obj.ext = meta['ext']
-		obj.created_at = meta["created_at"]
-		return obj
+		meta = MetaData.new
+		meta.filename = content['filename']
+		meta.ext = content['ext']
+		meta.created_at = content["created_at"]
+		meta
 	end
 end
