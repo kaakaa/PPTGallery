@@ -34,6 +34,12 @@
           %i.glyphicon.glyphicon-fast-forward |
     %input.prev(type="button" value=" ")
     %input.next(type="button" value=" ")
+    #wrapper(align="center")
+      .row
+        - images.each_with_index do |image, index|
+          .col-xs-6.col-md-3
+            %button(onClick="goPage(#{index})")
+              %img(src="#{image}" width="240px")
     %script(src="http://code.jquery.com/jquery.min.js")
     %script(type="text/javascript")
       var wrapper = $("div#wrapper"); |
@@ -97,5 +103,9 @@
       function goLast(){ |
         var last = wrapper.find('p:last'); |
         go(last); |
+      } |
+      function goPage(index){ |
+        var page = wrapper.find('p:eq(' + index + ')'); |
+        go(page); |
       } |
         

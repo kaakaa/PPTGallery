@@ -53,10 +53,6 @@ class UploadedFile
 			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images, :title => @meta.filename)
 		end
 		File.write(File.join(uploadedDirPath, "#{@meta.filename}.html"), engine) if !engine.nil?
-		File.open(File.join(@home, "views", "slide_all.haml")) do |f|
-			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images, :title => @meta.filename)
-		end
-		File.write(File.join(uploadedDirPath, "#{@meta.filename}_all.html"), engine) if !engine.nil?
 	end
 
 	def createMetaFile
