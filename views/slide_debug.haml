@@ -56,13 +56,17 @@
         setPageNumber(0); |
         resize(wrapper.find("p:visible").children("img")); |
       }); |
+      function spotOneInAllSlide(current) { |
+        $('#allslide .one_of_all_slide').eq(current).children('button').css('border','double 8px red'); |
+      }; |
       function toggleAllSlide() { |
         $('div#allslide').fadeToggle(); |
-      } |
+        spotOneInAllSlide(5); |
+      }; |
       function selectPage(index){ |
         goPage(index); |
         toggleAllSlide() ; |
-      } |
+      }; |
       function go(page) { |
         var now = wrapper.find("p:visible"); |
         if($('div#wrapper p').index(page) != $('div#wrapper p').index(now)) { |
