@@ -6,7 +6,8 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %style(type="text/css")
       div#wrapper { position: absolute; top: 0; left: 0;  margin: 0 auto; width: 100%;} |
-      div#allslide { display: none; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.7); width: 100%; z-index: 10; }
+      div#allslide { display: none; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,0.7); width: 100%; z-index: 10; padding: 30px 10px; } |
+      .one_of_all_slide { margin-bottom: 40px; text-align: center; } | 
       p.boxes { display: none; position absolute; z-index: 1;} |
       p#box1 { display: block; } |
       .prev { position: absolute; left: -20px; top: 0; border: 0; width: 100px; height: 1000px; opacity: 0; background: -moz-linear-gradient(left, rgba(0,0,0,1), rgba(255,255,255,0)); background: -webkit-gradient(linear, left, right, from(rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));} |
@@ -26,7 +27,7 @@
       %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goPrev()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-backward |
-      %button#pageNumber.btn(onClick="fadeInAllSlide()")
+      %button#pageNumber.btn.btn-inverse(onClick="toggleAllSlide()")
       %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goNext()")
         %font(size="2em" color="white")
           %i.glyphicon.glyphicon-forward |
@@ -37,7 +38,7 @@
     %input.next(type="button" value=" ")
     .row#allslide
       - @images.each_with_index do |image, index|
-        .col-xs-6.col-md-3
+        .col-xs-6.col-md-3.one_of_all_slide
           %button(onClick="selectPage(#{index})")
             %img(src="#{image}" width="240px")
     %script(src="http://code.jquery.com/jquery.min.js")
@@ -55,12 +56,12 @@
         setPageNumber(0); |
         resize(wrapper.find("p:visible").children("img")); |
       }); |
-      function fadeInAllSlide() { |
+      function toggleAllSlide() { |
         $('div#allslide').fadeToggle(); |
       } |
       function selectPage(index){ |
         goPage(index); |
-        fadeOutAllSlide() ; |
+        toggleAllSlide() ; |
       } |
       function go(page) { |
         var now = wrapper.find("p:visible"); |
