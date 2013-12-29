@@ -15,6 +15,15 @@ get '/' do
 	redirect '/gallery/1'
 end
 
+get '/debug' do
+	@images = Array.new
+	Dir.glob(File.join(File.dirname(__FILE__), 'uploads', '20131229113746_currietesting', "png", "*.png")).sort!.each{ |d|
+		@images << d.gsub!(/#{File.dirname(__FILE__)}/, '')
+	}
+	title = 'debug'
+	haml :slide_debug, :layout => false
+end
+
 get '/gallery/:page' do
 	MyLogger.log.info "#{request.ip} : Access in page #{params[:page]}"
 	uploadDir = File.join(File.dirname(__FILE__), 'uploads')
