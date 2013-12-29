@@ -27,7 +27,7 @@ end
 post "/upload" do
 	# uplod dir name is "#{Datetime}_#{UploadedFilename}_#{ext}"
 	MyLogger.log.info "#{request.ip} : Upload file #{params['myfile'][:filename]}"
-        meta = MetaData.new(params['myfile'][:filename])
+        meta = MetaData.create(params['myfile'][:filename])
 	ext = params['myfile'][:filename].split('.')[-1]
 	filename = params['myfile'][:filename].split('.')[0]
 	dirname = "#{Time.now.strftime('%Y%m%d%H%M%S')}_#{filename}_#{ext}"
