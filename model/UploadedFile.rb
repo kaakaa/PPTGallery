@@ -3,7 +3,6 @@ require 'haml'
 require 'systemu'
 
 class UploadedFile
-
 	def initialize(m)
 		@meta = m
 		@home = File.join(File.dirname(__FILE__), '..')
