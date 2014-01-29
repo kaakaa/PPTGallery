@@ -13,7 +13,7 @@
     %form(action='/upload' method='post' enctype='multipart/form-data')
       %input(id='myfile' type='file' name='myfile' style='display:none')
       .input-group
-        %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx file')
+        %input.form-control(id='selectFile' type='text' placeholder='choose .ppt/.pptx/.pdf file')
         %span.input-group-btn(data-intro="CHOOSE upload file")
           %button.btn(onclick="$('input[id=myfile]').click();" type='button')
             Browse

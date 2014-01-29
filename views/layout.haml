@@ -39,10 +39,10 @@
           return false;
         }
         var ext = getExtension($("#selectFile").val());
-        if(ext === "ppt" || ext === "pptx") {
+        if(ext === "ppt" || ext === "pptx" || ext === "pdf") {
           return true;
         } else {
-          alert("Please select ppt/pptx file");
+          alert("Please select ppt/pptx/pdf file");
           return false;
         };
       }); 
