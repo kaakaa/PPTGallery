@@ -35,10 +35,8 @@ post "/upload" do
 	begin
 		MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
 		uploadedFile = UploadedFile.new(meta)
-		if ext != 'pdf'
-			uploadedFile.savePpt(params['myfile'][:tempfile])
-			MyLogger.log.info "#{request.ip} : #{meta.filename} saved."
-		end
+		uploadedFile.saveUploaded(params['myfile'][:tempfile])
+		MyLogger.log.info "#{request.ip} : #{meta.filename} saved."
 		uploadedFile.savePdf()
 		MyLogger.log.info "#{request.ip} : Complete converting to PDF."
 		uploadedFile.savePng()

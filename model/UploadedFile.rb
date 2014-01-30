@@ -8,13 +8,17 @@ class UploadedFile
 		@home = File.join(File.dirname(__FILE__), '..')
 	end
 
-	def savePpt(uploadedFile)
+	def saveUploaded(uploadedFile)
 		File.open(uploadedFilePath, "w") do |f|
 			f.write(uploadedFile.read)
 		end
 	end
 
 	def savePdf
+		if @meta.ext == 'pdf'
+			return
+		end
+
 		pdfPath = File.join(uploadedDirPath, "#{@meta.filename}.pdf")
 		date = "java -jar #{@home}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}"
 		status, stdout, stderr = systemu date
