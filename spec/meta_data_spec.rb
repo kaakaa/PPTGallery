@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '..', 'model', 'MetaData.rb')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'meta_data')
 
 describe MetaData do
 	it "should get dirname" do
