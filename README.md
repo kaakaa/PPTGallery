@@ -5,6 +5,7 @@ This app is ppt/pptx gallery on CentOS.
 
 When you upload .ppt or .pptx file, this app coverts it to pdf and slide html.
 
+[![Build Status](https://travis-ci.org/kaakaa/PPTGallery.png?branch=master)](https://travis-ci.org/kaakaa/PPTGallery)
 
 USAGE
 -----
