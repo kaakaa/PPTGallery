@@ -3,9 +3,10 @@ require 'haml'
 require 'systemu'
 
 class UploadedFile
-	def initialize(m)
+	def initialize(root, home, m)
+		@root = root
+		@home = home
 		@meta = m
-		@home = File.join(File.dirname(__FILE__), '..')
 	end
 
 	def saveUploaded(uploadedFile)
@@ -20,21 +21,20 @@ class UploadedFile
 		end
 
 		pdfPath = File.join(uploadedDirPath, "#{@meta.filename}.pdf")
-		date = "java -jar #{@home}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}"
+		date = "java -jar #{File.dirname(__FILE__)}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}"
 		status, stdout, stderr = systemu date
+
 		if status.nil? then
 			MyLogger.log.error "JODConverter is stopped by someone!"
+			return
 		elsif status.exitstatus != 0 then
 			MyLogger.log.error "Converting to PDF by JODConverter is failed."
-			MyLogger.log.error "Exit Code: #{status}"
-			MyLogger.log.error "STDOUT: #{stdout}"
-			MyLogger.log.error "STERRT: #{stderr}"
 		else
 			MyLogger.log.info "Converting to PDF by JODConverter is success!"
-			MyLogger.log.info "Exit Code: #{status}"
-			MyLogger.log.info "STDOUT: #{stdout}"
-			MyLogger.log.info "STERRT: #{stderr}"
 		end
+		MyLogger.log.info "Exit Code: #{status}"
+		MyLogger.log.info "STDOUT: #{stdout}"
+		MyLogger.log.info "STERRT: #{stderr}"
 	end
 
 	def savePng
@@ -52,14 +52,14 @@ class UploadedFile
 			images << d.gsub!(/#{@home}/, '')
 		}
 		engine = nil
-		File.open(File.join(@home, "views", "slide.haml")) do |f|
+		File.open(File.join(File.dirname(__FILE__), '..', 'views', 'slide.haml')) do |f|
 			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images, :title => @meta.filename)
 		end
 		File.write(File.join(uploadedDirPath, "#{@meta.filename}.html"), engine) if !engine.nil?
 	end
 
 	def createMetaFile
-		@meta.save(@home)
+		@meta.save()
 	end
 	
 	def uploadedFilePath
@@ -67,7 +67,7 @@ class UploadedFile
 	end
 
 	def uploadedDirPath
-		targetDirPath = File.join(@home, @meta.dirname)
+		targetDirPath = File.join(@meta.dirname)
 		Dir.mkdir(targetDirPath) if !Dir.exist?(targetDirPath)
 		targetDirPath
 	end
