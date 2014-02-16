@@ -71,7 +71,6 @@ end
 
 delete "/delete" do
 	MyLogger.log.info "#{request.ip} : Deleting #{params['target']}"
-	p params['target']
 	deleteUploaded(params['target'])
 	MyLogger.log.info "#{request.ip} : Complete deleting #{params['target']}"
 	redirect '/gallery/1'
@@ -79,8 +78,8 @@ end
 
 helpers do
 	def deleteUploaded(path)
-		FileUtils.rm_r(Dir.glob(File.join(File.dirname(__FILE__), path, "**", "*.*")), {:force=>true})
-		FileUtils.rm_r(Dir.glob(File.join(File.dirname(__FILE__), path)), {:force=>true})
+		FileUtils.rm_r(Dir.glob(File.join(path, "**", "*.*")), {:force=>true})
+		FileUtils.rm_r(Dir.glob(path), {:force=>true})
 	end
 
 	def getMetaDataForDisplay(dirname, page)
