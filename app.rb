@@ -11,16 +11,19 @@ configure do
 	enable :logging
 end
 
+before do
+	@uploadDir = File.join(settings.public_folder, 'uploads')
+	Dir.mkdir(@uploadDir) if !Dir.exists?(@uploadDir)
+end
+
 get '/' do
 	redirect '/gallery/1'
 end
 
 get '/gallery/:page' do
 	MyLogger.log.info "#{request.ip} : Access in page #{params[:page]}"
-	uploadDir = File.join(settings.public_folder, 'uploads')
-	@current = page = params[:page].to_i
-	Dir.mkdir(uploadDir) if !Dir.exists?(uploadDir)
-	@metaDataArray, @pagenum = getMetaDataForDisplay(uploadDir, @current)
+	@current = params[:page].to_i
+	@metaDataArray, @pagenum = getMetaDataForDisplay(@uploadDir, @current)
 	haml :upload
 end
 
@@ -55,17 +58,15 @@ post "/upload" do
 end
 
 get '/rss' do
-	home = settings.public_folder
-	dirs = Dir.glob(File.join(home, "uploads","*")).sort.reverse
+	dirs = Dir.glob(File.join(@uploadDir, "*")).sort.reverse
 	@posts = []
 	dirs[0..15].each{ |d|
-		@posts << Post.new(d.gsub!(/#{home}/,''), "#{request.host}:#{request.port}")
+		@posts << Post.new(d.gsub!(/#{settings.public_folder}/,''), "#{request.host}:#{request.port}")
 	}
 	@lastBuildDate = DateTime.parse('2000/1/1')
 	@posts.each{ |p|
 		@lastBuildDate = p.pubDate if  @lastBuildDate < p.pubDate
 	}
-	
 	builder :rss
 end
 
