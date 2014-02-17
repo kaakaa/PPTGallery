@@ -13,7 +13,8 @@ class CommandExecutor
 		elsif status.exitstatus != 0 then
 			MyLogger.log.error "Converting to PDF by JODConverter is failed."
 		end
-			MyLogger.log.info "Converting to PDF by JODConverter is success!"
+
+		MyLogger.log.info "Converting to PDF by JODConverter is success!"
 		MyLogger.log.info "Exit Code: #{status}"
 		MyLogger.log.info "STDOUT: #{stdout}"
 		MyLogger.log.info "STERRT: #{stderr}"

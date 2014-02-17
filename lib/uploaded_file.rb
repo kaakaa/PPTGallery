@@ -9,6 +9,24 @@ class UploadedFile
 		Dir.mkdir(@meta.dirname) if !Dir.exist?(@meta.dirname)
 	end
 
+	def convert(ip, tempfile)
+		saveUploaded(tempfile)
+		MyLogger.log.info "#{ip} : #{@meta.filename} saved."
+
+		savePdf()
+		MyLogger.log.info "#{ip} : Complete converting to PDF."
+
+		savePng()
+		MyLogger.log.info "#{ip} : Complete converting to PNG."
+
+		makeHtml()
+		MyLogger.log.info "#{ip} : Complete making HTML."
+
+		createMetaFile()
+		MyLogger.log.info "#{ip} : Complete creating .meta."
+		MyLogger.log.info "#{ip} : Complete uploading."
+	end
+
 	def saveUploaded(uploadedFile)
 		File.open(uploadedFilePath, "w") do |f|
 			f.write(uploadedFile.read)

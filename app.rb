@@ -35,17 +35,7 @@ post "/upload" do
 	begin
 		MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
 		uploadedFile = UploadedFile.new(settings.root, settings.public_folder, meta)
-		uploadedFile.saveUploaded(params['myfile'][:tempfile])
-		MyLogger.log.info "#{request.ip} : #{meta.filename} saved."
-		uploadedFile.savePdf()
-		MyLogger.log.info "#{request.ip} : Complete converting to PDF."
-		uploadedFile.savePng()
-		MyLogger.log.info "#{request.ip} : Complete converting to PNG."
-		uploadedFile.makeHtml()
-		MyLogger.log.info "#{request.ip} : Complete making HTML."
-		uploadedFile.createMetaFile()
-		MyLogger.log.info "#{request.ip} : Complete creating .meta."
-		MyLogger.log.info "#{request.ip} : Complete uploading."
+		uploadedFile.convert(request.ip, params['myfile'][:tempfile])
 	rescue => ex
 		MyLogger.log.error "#{request.ip} : Failing Upload to #{meta.filename}"
 		MyLogger.log.error "#{request.ip} : #{ex.message}"
