@@ -31,9 +31,6 @@ post "/upload" do
 	# uplod dir name is "#{Datetime}_#{UploadedFilename}"
 	MyLogger.log.info "#{request.ip} : Upload file #{params['myfile'][:filename]}"
         meta = MetaData.create(settings.public_folder, params['myfile'][:filename])
-	ext = params['myfile'][:filename].split('.')[-1]
-	filename = params['myfile'][:filename].split('.')[0]
-	dirname = "#{Time.now.strftime('%Y%m%d%H%M%S')}_#{filename}_#{ext}"
 
 	begin
 		MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
@@ -52,7 +49,7 @@ post "/upload" do
 	rescue => ex
 		MyLogger.log.error "#{request.ip} : Failing Upload to #{meta.filename}"
 		MyLogger.log.error "#{request.ip} : #{ex.message}"
-		deleteUploaded(dirname)
+		deleteUploaded(meta.dirname)
 	end
 	redirect '/gallery/1'
 end
