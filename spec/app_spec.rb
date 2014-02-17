@@ -4,6 +4,7 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'my_logger')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'uploaded_file')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'post')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'meta_data')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'cmd_executor')
 
 set :root, File.dirname(__FILE__)
 set :public_folder, File.dirname(__FILE__)
