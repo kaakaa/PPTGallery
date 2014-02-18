@@ -15,7 +15,7 @@ RSpec.configure do |conf|
 end
 
 def app
-	Sinatra::Application
+	PPTGallery::App
 end
 
 def clear_all

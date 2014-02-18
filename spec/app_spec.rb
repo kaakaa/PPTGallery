@@ -6,12 +6,14 @@ require File.join(File.dirname(__FILE__), '..', 'lib', 'post')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'meta_data')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'cmd_executor')
 
-set :root, File.dirname(__FILE__)
-set :public_folder, File.dirname(__FILE__)
+# set :root, File.dirname(__FILE__)
+# set :public_folder, File.dirname(__FILE__)
 
-describe 'test' do
+describe PPTGallery::App do
 
 	before :all do
+		app.set(:root, File.dirname(__FILE__))
+		app.set(:public_folder, File.dirname(__FILE__))
 		Dir.mkdir(upload_path) if !Dir.exists?(upload_path)
 	end
 
