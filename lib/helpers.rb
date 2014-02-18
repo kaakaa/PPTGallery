@@ -1,7 +1,8 @@
 module Helpers
         def deleteUploaded(path)
-                FileUtils.rm_r(Dir.glob(File.join(path, "**", "*.*")), {:force=>true})
-                FileUtils.rm_r(Dir.glob(path), {:force=>true})
+		[path, File.join(path, "**", "*.*")].each do |p|
+        	        FileUtils.rm_r(Dir.glob(p), {:force=>true})
+		end
         end
 
         def getMetaDataForDisplay(dirname, page)
