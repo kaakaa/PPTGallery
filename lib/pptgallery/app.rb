@@ -63,7 +63,7 @@ module PPTGallery
 			dirs[0..15].each{ |d|
 				post = Post.new(d.gsub!(/#{settings.public_folder}/,''), "#{request.host}:#{request.port}")
 				@posts << post
-				@lastBuildDate = post.pubDate if @lastBuildDate < p.pubDate
+				@lastBuildDate = post.pubDate if @lastBuildDate < post.pubDate
 			}
 			builder :rss
 		end
