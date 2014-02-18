@@ -47,12 +47,11 @@ end
 get '/rss' do
 	dirs = Dir.glob(File.join(@uploadDir, "*")).sort.reverse
 	@posts = []
-	dirs[0..15].each{ |d|
-		@posts << Post.new(d.gsub!(/#{settings.public_folder}/,''), "#{request.host}:#{request.port}")
-	}
 	@lastBuildDate = DateTime.parse('2000/1/1')
-	@posts.each{ |p|
-		@lastBuildDate = p.pubDate if  @lastBuildDate < p.pubDate
+	dirs[0..15].each{ |d|
+		post = Post.new(d.gsub!(/#{settings.public_folder}/,''), "#{request.host}:#{request.port}")
+		@posts << post
+		@lastBuildDate = post.pubDate if @lastBuildDate < p.pubDate
 	}
 	builder :rss
 end
