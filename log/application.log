@@ -1,0 +1,516 @@
+INFO : 2014-02-16 14:17:18 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-16 14:17:18 :: 127.0.0.1 : Start converting /uploads/20140216141718_sample/sample.ppt
+INFO : 2014-02-16 14:17:18 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-16 14:17:20 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-16 14:17:20 :: Exit Code: pid 15934 exit 0
+INFO : 2014-02-16 14:17:20 :: STDOUT: 
+INFO : 2014-02-16 14:17:20 :: STERRT: 2 16, 2014 2:17:19 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 16, 2014 2:17:20 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-16 14:17:20 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Start converting /uploads/20140216141725_sample/sample.pdf
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-16 14:17:25 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-16 14:17:29 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-16 14:17:29 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-16 14:17:29 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-16 14:17:29 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 12:54:45 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 12:54:45 :: 127.0.0.1 : Start converting /uploads/20140217125445_sample/sample.ppt
+INFO : 2014-02-17 12:54:45 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 12:54:49 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 12:54:49 :: Exit Code: pid 16085 exit 0
+INFO : 2014-02-17 12:54:49 :: STDOUT: 
+INFO : 2014-02-17 12:54:49 :: STERRT: 2 17, 2014 12:54:47 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 12:54:49 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 12:54:49 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Start converting /uploads/20140217125455_sample/sample.pdf
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 12:54:55 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 12:55:02 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 12:55:02 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 12:55:02 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 12:55:02 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:11:34 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:11:34 :: 127.0.0.1 : Start converting /uploads/20140217131134_sample/sample.ppt
+INFO : 2014-02-17 13:11:34 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:11:36 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:11:36 :: Exit Code: pid 16159 exit 0
+INFO : 2014-02-17 13:11:36 :: STDOUT: 
+INFO : 2014-02-17 13:11:36 :: STERRT: 2 17, 2014 1:11:35 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:11:36 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:11:36 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:11:43 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:11:43 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:11:43 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:11:43 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:11:44 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:11:44 :: 127.0.0.1 : Start converting /uploads/20140217131144_sample/sample.pdf
+INFO : 2014-02-17 13:11:44 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:11:44 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:11:49 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:11:49 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:11:49 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:11:49 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:16:35 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 13:16:41 :: 192.168.33.1 : Upload file 20080513.ppt
+INFO : 2014-02-17 13:16:41 :: 192.168.33.1 : Start converting /uploads/20140217131641_20080513/20080513.ppt
+INFO : 2014-02-17 13:16:41 :: 192.168.33.1 : 20080513 saved.
+INFO : 2014-02-17 13:16:43 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:16:43 :: Exit Code: pid 16208 exit 0
+INFO : 2014-02-17 13:16:43 :: STDOUT: 
+INFO : 2014-02-17 13:16:43 :: STERRT: 2 17, 2014 1:16:42 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:16:43 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:16:43 :: 192.168.33.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:16:44 :: 192.168.33.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:16:44 :: 192.168.33.1 : Complete making HTML.
+INFO : 2014-02-17 13:16:44 :: 192.168.33.1 : Complete creating .meta.
+INFO : 2014-02-17 13:16:44 :: 192.168.33.1 : Complete uploading.
+INFO : 2014-02-17 13:16:44 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 13:23:32 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:23:32 :: 127.0.0.1 : Start converting /uploads/20140217132332_sample/sample.ppt
+INFO : 2014-02-17 13:23:32 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:23:35 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:23:35 :: Exit Code: pid 16267 exit 0
+INFO : 2014-02-17 13:23:35 :: STDOUT: 
+INFO : 2014-02-17 13:23:35 :: STERRT: 2 17, 2014 1:23:33 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:23:35 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:23:35 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Start converting /uploads/20140217132341_sample/sample.pdf
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:23:41 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:23:47 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:23:47 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:23:47 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:23:47 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:24:36 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:24:36 :: 127.0.0.1 : Start converting /uploads/20140217132436_sample/sample.ppt
+INFO : 2014-02-17 13:24:36 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:24:39 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:24:39 :: Exit Code: pid 16317 exit 0
+INFO : 2014-02-17 13:24:39 :: STDOUT: 
+INFO : 2014-02-17 13:24:39 :: STERRT: 2 17, 2014 1:24:37 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:24:39 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:24:39 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Start converting /uploads/20140217132445_sample/sample.pdf
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:24:45 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:24:51 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:24:51 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:24:51 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:24:51 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:30:33 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:30:33 :: 127.0.0.1 : Start converting /uploads/20140217133033_sample/sample.ppt
+INFO : 2014-02-17 13:30:33 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:30:35 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:30:35 :: Exit Code: pid 16369 exit 0
+INFO : 2014-02-17 13:30:35 :: STDOUT: 
+INFO : 2014-02-17 13:30:35 :: STERRT: 2 17, 2014 1:30:34 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:30:35 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:30:35 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:30:41 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:30:41 :: 127.0.0.1 : Complete making HTML.
+ERROR : 2014-02-17 13:30:41 :: 127.0.0.1 : Failing Upload to sample
+ERROR : 2014-02-17 13:30:41 :: 127.0.0.1 : undefined method `createMetaFile' for #<UploadedFile:0x000000014dba10>
+INFO : 2014-02-17 13:30:41 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:30:41 :: 127.0.0.1 : Start converting /uploads/20140217133041_sample/sample.pdf
+INFO : 2014-02-17 13:30:41 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:30:41 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:30:47 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:30:47 :: 127.0.0.1 : Complete making HTML.
+ERROR : 2014-02-17 13:30:47 :: 127.0.0.1 : Failing Upload to sample
+ERROR : 2014-02-17 13:30:47 :: 127.0.0.1 : undefined method `createMetaFile' for #<UploadedFile:0x00000001635fc8>
+INFO : 2014-02-17 13:32:11 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:32:11 :: 127.0.0.1 : Start converting /uploads/20140217133211_sample/sample.ppt
+INFO : 2014-02-17 13:32:11 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:32:13 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:32:13 :: Exit Code: pid 16422 exit 0
+INFO : 2014-02-17 13:32:13 :: STDOUT: 
+INFO : 2014-02-17 13:32:13 :: STERRT: 2 17, 2014 1:32:12 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:32:13 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:32:13 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Start converting /uploads/20140217133218_sample/sample.pdf
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:32:18 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:32:23 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:32:23 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:32:23 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:32:23 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : Start converting /uploads/20140217134601_sample/sample.ppt
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : sample saved.
+ERROR : 2014-02-17 13:46:01 :: 127.0.0.1 : Failing Upload to sample
+ERROR : 2014-02-17 13:46:01 :: 127.0.0.1 : uninitialized constant UploadedFile::CommandExecutor
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : Start converting /uploads/20140217134601_sample/sample.pdf
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:46:01 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:46:07 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:46:07 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:46:07 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:46:07 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:46:54 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:46:54 :: 127.0.0.1 : Start converting /uploads/20140217134654_sample/sample.ppt
+INFO : 2014-02-17 13:46:54 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:46:57 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:46:57 :: Exit Code: pid 16511 exit 0
+INFO : 2014-02-17 13:46:57 :: STDOUT: 
+INFO : 2014-02-17 13:46:57 :: STERRT: 2 17, 2014 1:46:55 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:46:57 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:46:57 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Start converting /uploads/20140217134703_sample/sample.pdf
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:47:03 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:47:09 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:47:09 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:47:09 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:47:09 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:49:08 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 13:49:15 :: 192.168.33.1 : Upload file austin_shoppingmall.pdf
+INFO : 2014-02-17 13:49:15 :: 192.168.33.1 : Start converting /uploads/20140217134915_austin_shoppingmall/austin_shoppingmall.pdf
+INFO : 2014-02-17 13:49:15 :: 192.168.33.1 : austin_shoppingmall saved.
+INFO : 2014-02-17 13:49:15 :: 192.168.33.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:49:17 :: 192.168.33.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:49:17 :: 192.168.33.1 : Complete making HTML.
+INFO : 2014-02-17 13:49:17 :: 192.168.33.1 : Complete creating .meta.
+INFO : 2014-02-17 13:49:17 :: 192.168.33.1 : Complete uploading.
+INFO : 2014-02-17 13:49:17 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 13:49:21 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140217134915_austin_shoppingmall
+INFO : 2014-02-17 13:49:21 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140217134915_austin_shoppingmall
+INFO : 2014-02-17 13:49:22 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 13:49:28 :: 192.168.33.1 : Upload file 20080513.ppt
+INFO : 2014-02-17 13:49:28 :: 192.168.33.1 : Start converting /uploads/20140217134928_20080513/20080513.ppt
+INFO : 2014-02-17 13:49:28 :: 192.168.33.1 : 20080513 saved.
+INFO : 2014-02-17 13:49:30 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:49:30 :: Exit Code: pid 16588 exit 0
+INFO : 2014-02-17 13:49:30 :: STDOUT: 
+INFO : 2014-02-17 13:49:30 :: STERRT: 2 17, 2014 1:49:29 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:49:30 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:49:30 :: 192.168.33.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:49:31 :: 192.168.33.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:49:31 :: 192.168.33.1 : Complete making HTML.
+INFO : 2014-02-17 13:49:31 :: 192.168.33.1 : Complete creating .meta.
+INFO : 2014-02-17 13:49:31 :: 192.168.33.1 : Complete uploading.
+INFO : 2014-02-17 13:49:31 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 13:49:49 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:49:49 :: 127.0.0.1 : Start converting /uploads/20140217134949_sample/sample.ppt
+INFO : 2014-02-17 13:49:49 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:49:53 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:49:53 :: Exit Code: pid 16636 exit 0
+INFO : 2014-02-17 13:49:53 :: STDOUT: 
+INFO : 2014-02-17 13:49:53 :: STERRT: 2 17, 2014 1:49:51 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:49:53 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:49:53 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:49:59 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:49:59 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:49:59 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:49:59 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:50:00 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:50:00 :: 127.0.0.1 : Start converting /uploads/20140217135000_sample/sample.pdf
+INFO : 2014-02-17 13:50:00 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:50:00 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:50:05 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:50:05 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:50:05 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:50:05 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:58:12 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:58:12 :: 127.0.0.1 : Start converting /uploads/20140217135812_sample/sample.ppt
+ERROR : 2014-02-17 13:58:12 :: 127.0.0.1 : Failing Upload to sample
+ERROR : 2014-02-17 13:58:12 :: 127.0.0.1 : undefined local variable or method `uploadedFile' for #<UploadedFile:0x0000000192d0a0>
+INFO : 2014-02-17 13:58:12 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:58:12 :: 127.0.0.1 : Start converting /uploads/20140217135812_sample/sample.pdf
+ERROR : 2014-02-17 13:58:12 :: 127.0.0.1 : Failing Upload to sample
+ERROR : 2014-02-17 13:58:12 :: 127.0.0.1 : undefined local variable or method `uploadedFile' for #<UploadedFile:0x000000029ad830>
+INFO : 2014-02-17 13:59:24 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-17 13:59:24 :: 127.0.0.1 : Start converting /uploads/20140217135924_sample/sample.ppt
+INFO : 2014-02-17 13:59:24 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:59:27 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 13:59:27 :: Exit Code: pid 16729 exit 0
+INFO : 2014-02-17 13:59:27 :: STDOUT: 
+INFO : 2014-02-17 13:59:27 :: STERRT: 2 17, 2014 1:59:25 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 1:59:27 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 13:59:27 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Start converting /uploads/20140217135933_sample/sample.pdf
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-17 13:59:33 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-17 13:59:39 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-17 13:59:39 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-17 13:59:39 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-17 13:59:39 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-17 14:00:13 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:00:22 :: 192.168.33.1 : Upload file 20080513.ppt
+INFO : 2014-02-17 14:00:22 :: 192.168.33.1 : Start converting /uploads/20140217140022_20080513/20080513.ppt
+INFO : 2014-02-17 14:00:22 :: 192.168.33.1 : 20080513 saved.
+INFO : 2014-02-17 14:00:24 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 14:00:24 :: Exit Code: pid 16775 exit 0
+INFO : 2014-02-17 14:00:24 :: STDOUT: 
+INFO : 2014-02-17 14:00:24 :: STERRT: 2 17, 2014 2:00:23 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 2:00:24 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 14:00:24 :: 192.168.33.1 : Complete converting to PDF.
+INFO : 2014-02-17 14:00:25 :: 192.168.33.1 : Complete converting to PNG.
+INFO : 2014-02-17 14:00:25 :: 192.168.33.1 : Complete making HTML.
+INFO : 2014-02-17 14:00:25 :: 192.168.33.1 : Complete creating .meta.
+INFO : 2014-02-17 14:00:25 :: 192.168.33.1 : Complete uploading.
+INFO : 2014-02-17 14:00:25 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:07:41 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:07:47 :: 192.168.33.1 : Upload file 20080513.ppt
+INFO : 2014-02-17 14:07:47 :: 192.168.33.1 : Start converting /uploads/20140217140747_20080513/20080513.ppt
+INFO : 2014-02-17 14:07:47 :: 192.168.33.1 : 20080513 saved.
+INFO : 2014-02-17 14:07:49 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-17 14:07:49 :: Exit Code: pid 16851 exit 0
+INFO : 2014-02-17 14:07:49 :: STDOUT: 
+INFO : 2014-02-17 14:07:49 :: STERRT: 2 17, 2014 2:07:48 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 17, 2014 2:07:49 午後 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-17 14:07:49 :: 192.168.33.1 : Complete converting to PDF.
+INFO : 2014-02-17 14:07:50 :: 192.168.33.1 : Complete converting to PNG.
+INFO : 2014-02-17 14:07:50 :: 192.168.33.1 : Complete making HTML.
+INFO : 2014-02-17 14:07:50 :: 192.168.33.1 : Complete creating .meta.
+INFO : 2014-02-17 14:07:50 :: 192.168.33.1 : Complete uploading.
+INFO : 2014-02-17 14:07:50 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:07:56 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140216113407_20080513
+INFO : 2014-02-17 14:07:56 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140216113407_20080513
+INFO : 2014-02-17 14:07:56 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:08:01 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140216140039_20080513
+INFO : 2014-02-17 14:08:01 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140216140039_20080513
+INFO : 2014-02-17 14:08:01 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:08:04 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140217131641_20080513
+INFO : 2014-02-17 14:08:04 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140217131641_20080513
+INFO : 2014-02-17 14:08:04 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:08:07 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140217134928_20080513
+INFO : 2014-02-17 14:08:07 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140217134928_20080513
+INFO : 2014-02-17 14:08:07 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:08:09 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140217140022_20080513
+INFO : 2014-02-17 14:08:09 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140217140022_20080513
+INFO : 2014-02-17 14:08:09 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-17 14:08:12 :: 192.168.33.1 : Deleting /vagrant/dev_PPTGallery/public/uploads/20140217140747_20080513
+INFO : 2014-02-17 14:08:12 :: 192.168.33.1 : Complete deleting /vagrant/dev_PPTGallery/public/uploads/20140217140747_20080513
+INFO : 2014-02-17 14:08:12 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-18 11:03:20 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-18 11:03:20 :: 127.0.0.1 : Start converting /uploads/20140218110320_sample/sample.ppt
+INFO : 2014-02-18 11:03:20 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:03:22 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-18 11:03:22 :: Exit Code: pid 17057 exit 0
+INFO : 2014-02-18 11:03:22 :: STDOUT: 
+INFO : 2014-02-18 11:03:22 :: STERRT: 2 18, 2014 11:03:21 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 18, 2014 11:03:22 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-18 11:03:22 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:03:26 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:03:26 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:03:26 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:03:26 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:03:27 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-18 11:03:27 :: 127.0.0.1 : Start converting /uploads/20140218110327_sample/sample.pdf
+INFO : 2014-02-18 11:03:27 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:03:27 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:03:31 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:03:31 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:03:31 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:03:31 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:05:12 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-18 11:06:10 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-18 11:06:44 :: 192.168.33.1 : Upload file Gemfile.ppt
+INFO : 2014-02-18 11:06:44 :: 192.168.33.1 : Start converting /uploads/20140218110644_Gemfile/Gemfile.ppt
+INFO : 2014-02-18 11:06:44 :: 192.168.33.1 : Gemfile saved.
+ERROR : 2014-02-18 11:06:47 :: Converting to PDF by JODConverter is failed.
+INFO : 2014-02-18 11:06:47 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-18 11:06:47 :: Exit Code: pid 17199 exit 1
+INFO : 2014-02-18 11:06:47 :: STDOUT: 
+INFO : 2014-02-18 11:06:47 :: STERRT: 2 18, 2014 11:06:45 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 18, 2014 11:06:47 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+Exception in thread "main" com.artofsolving.jodconverter.openoffice.connection.OpenOfficeException: conversion failed: could not save output document; OOo errorCode: 2074
+	at com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter.loadAndExport(OpenOfficeDocumentConverter.java:142)
+	at com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter.convertInternal(OpenOfficeDocumentConverter.java:120)
+	at com.artofsolving.jodconverter.openoffice.converter.AbstractOpenOfficeDocumentConverter.convert(AbstractOpenOfficeDocumentConverter.java:104)
+	at com.artofsolving.jodconverter.openoffice.converter.AbstractOpenOfficeDocumentConverter.convert(AbstractOpenOfficeDocumentConverter.java:74)
+	at com.artofsolving.jodconverter.openoffice.converter.AbstractOpenOfficeDocumentConverter.convert(AbstractOpenOfficeDocumentConverter.java:70)
+	at com.artofsolving.jodconverter.cli.ConvertDocument.convertOne(ConvertDocument.java:154)
+	at com.artofsolving.jodconverter.cli.ConvertDocument.main(ConvertDocument.java:133)
+Caused by: com.sun.star.task.ErrorCodeIOException: 
+	at com.sun.star.lib.uno.environments.remote.Job.remoteUnoRequestRaisedException(Job.java:182)
+	at com.sun.star.lib.uno.environments.remote.Job.execute(Job.java:148)
+	at com.sun.star.lib.uno.environments.remote.JobQueue.enter(JobQueue.java:344)
+	at com.sun.star.lib.uno.environments.remote.JobQueue.enter(JobQueue.java:313)
+	at com.sun.star.lib.uno.environments.remote.JavaThreadPool.enter(JavaThreadPool.java:101)
+	at com.sun.star.lib.uno.bridges.java_remote.java_remote_bridge.sendRequest(java_remote_bridge.java:652)
+	at com.sun.star.lib.uno.bridges.java_remote.ProxyFactory$Handler.request(ProxyFactory.java:154)
+	at com.sun.star.lib.uno.bridges.java_remote.ProxyFactory$Handler.invoke(ProxyFactory.java:136)
+	at com.sun.proxy.$Proxy8.storeToURL(Unknown Source)
+	at com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter.storeDocument(OpenOfficeDocumentConverter.java:156)
+	at com.artofsolving.jodconverter.openoffice.converter.OpenOfficeDocumentConverter.loadAndExport(OpenOfficeDocumentConverter.java:140)
+	... 6 more
+
+INFO : 2014-02-18 11:06:47 :: 192.168.33.1 : Complete converting to PDF.
+ERROR : 2014-02-18 11:06:47 :: 192.168.33.1 : Failing Upload to Gemfile
+ERROR : 2014-02-18 11:06:47 :: 192.168.33.1 : unable to open image `/vagrant/dev_PPTGallery/public/uploads/20140218110644_Gemfile/Gemfile.pdf': そのようなファイルやディレクトリはありません @ blob.c/OpenBlob/2480
+INFO : 2014-02-18 11:06:47 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-18 11:14:50 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-18 11:15:02 :: 192.168.33.1 : Upload file 20080513.ppt
+INFO : 2014-02-18 11:15:02 :: 192.168.33.1 : Start converting /uploads/20140218111502_20080513/20080513.ppt
+INFO : 2014-02-18 11:15:02 :: 192.168.33.1 : 20080513 saved.
+INFO : 2014-02-18 11:15:04 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-18 11:15:04 :: Exit Code: pid 17397 exit 0
+INFO : 2014-02-18 11:15:04 :: STDOUT: 
+INFO : 2014-02-18 11:15:04 :: STERRT: 2 18, 2014 11:15:03 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 18, 2014 11:15:04 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-18 11:15:04 :: 192.168.33.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:15:05 :: 192.168.33.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:15:05 :: 192.168.33.1 : Complete making HTML.
+INFO : 2014-02-18 11:15:05 :: 192.168.33.1 : Complete creating .meta.
+INFO : 2014-02-18 11:15:05 :: 192.168.33.1 : Complete uploading.
+INFO : 2014-02-18 11:15:05 :: 192.168.33.1 : Access in page 1
+INFO : 2014-02-18 11:16:21 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-18 11:16:21 :: 127.0.0.1 : Start converting /uploads/20140218111621_sample/sample.ppt
+INFO : 2014-02-18 11:16:21 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:16:23 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-18 11:16:23 :: Exit Code: pid 17499 exit 0
+INFO : 2014-02-18 11:16:23 :: STDOUT: 
+INFO : 2014-02-18 11:16:23 :: STERRT: 2 18, 2014 11:16:22 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 18, 2014 11:16:23 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-18 11:16:23 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:16:27 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:16:27 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:16:27 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:16:27 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:16:28 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-18 11:16:28 :: 127.0.0.1 : Start converting /uploads/20140218111628_sample/sample.pdf
+INFO : 2014-02-18 11:16:28 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:16:28 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:16:32 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:16:32 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:16:32 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:16:32 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:16:47 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-18 11:16:47 :: 127.0.0.1 : Start converting /uploads/20140218111647_sample/sample.ppt
+INFO : 2014-02-18 11:16:47 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:16:49 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-18 11:16:49 :: Exit Code: pid 17549 exit 0
+INFO : 2014-02-18 11:16:49 :: STDOUT: 
+INFO : 2014-02-18 11:16:49 :: STERRT: 2 18, 2014 11:16:48 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 18, 2014 11:16:49 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-18 11:16:49 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Start converting /uploads/20140218111654_sample/sample.pdf
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:16:54 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:16:58 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:16:58 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:16:58 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:16:58 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:19:30 :: 127.0.0.1 : Upload file sample.ppt
+INFO : 2014-02-18 11:19:30 :: 127.0.0.1 : Start converting /uploads/20140218111930_sample/sample.ppt
+INFO : 2014-02-18 11:19:30 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:19:32 :: Converting to PDF by JODConverter is success!
+INFO : 2014-02-18 11:19:32 :: Exit Code: pid 17610 exit 0
+INFO : 2014-02-18 11:19:32 :: STDOUT: 
+INFO : 2014-02-18 11:19:32 :: STERRT: 2 18, 2014 11:19:30 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection connect
+情報: connected
+2 18, 2014 11:19:32 午前 com.artofsolving.jodconverter.openoffice.connection.AbstractOpenOfficeConnection disposing
+情報: disconnected
+
+INFO : 2014-02-18 11:19:32 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Complete uploading.
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Upload file sample.pdf
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Start converting /uploads/20140218111936_sample/sample.pdf
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : sample saved.
+INFO : 2014-02-18 11:19:36 :: 127.0.0.1 : Complete converting to PDF.
+INFO : 2014-02-18 11:19:40 :: 127.0.0.1 : Complete converting to PNG.
+INFO : 2014-02-18 11:19:40 :: 127.0.0.1 : Complete making HTML.
+INFO : 2014-02-18 11:19:40 :: 127.0.0.1 : Complete creating .meta.
+INFO : 2014-02-18 11:19:40 :: 127.0.0.1 : Complete uploading.
