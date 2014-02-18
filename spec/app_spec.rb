@@ -1,10 +1,9 @@
 require 'spec_helper'
-require File.join(File.dirname(__FILE__), '..', 'app')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'my_logger')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'uploaded_file')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'post')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'meta_data')
-require File.join(File.dirname(__FILE__), '..', 'lib', 'cmd_executor')
+require File.expand_path('../lib/pptgallery/my_logger', File.dirname(__FILE__))
+require File.expand_path('../lib/pptgallery/uploaded_file', File.dirname(__FILE__))
+require File.expand_path('../lib/pptgallery/post', File.dirname(__FILE__))
+require File.expand_path('../lib/pptgallery/meta_data', File.dirname(__FILE__))
+require File.expand_path('../lib/pptgallery/cmd_executor', File.dirname(__FILE__))
 
 # set :root, File.dirname(__FILE__)
 # set :public_folder, File.dirname(__FILE__)

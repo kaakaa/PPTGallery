@@ -56,7 +56,7 @@ class UploadedFile
 			images << d.gsub!(/#{@home}/, '')
 		}
 		engine = nil
-		File.open(File.join(File.dirname(__FILE__), '..', 'views', 'slide.haml')) do |f|
+		File.open(File.expand_path('../../views/slide.haml', File.dirname(__FILE__))) do |f|
 			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images, :title => @meta.filename)
 		end
 		File.write(File.join(@meta.dirname, "#{@meta.filename}.html"), engine) if !engine.nil?

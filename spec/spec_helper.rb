@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require File.join(File.dirname(__FILE__), '..', 'app')
+require File.expand_path('../lib/pptgallery/app', File.dirname(__FILE__))
 
 require 'rspec'
 require 'rack/test'

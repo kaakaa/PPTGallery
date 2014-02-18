@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '..', 'lib', 'meta_data')
+require File.expand_path('../lib/pptgallery/meta_data', File.dirname(__FILE__))
 
 describe MetaData do
 

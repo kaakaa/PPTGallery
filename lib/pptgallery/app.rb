@@ -6,11 +6,18 @@ require 'haml'
 require 'fileutils'
 require 'builder'
 require 'logger'
-require File.join(File.dirname(__FILE__), 'lib', 'helpers')
 
+require File.join(File.dirname(__FILE__), 'helpers')
+require File.join(File.dirname(__FILE__), 'uploaded_file')
+require File.join(File.dirname(__FILE__), 'meta_data')
+require File.join(File.dirname(__FILE__), 'post')
+require File.join(File.dirname(__FILE__), 'my_logger')
+require File.join(File.dirname(__FILE__), 'cmd_executor')
 
 module PPTGallery
 	class App < Sinatra::Base
+		set :public_folder, File.expand_path('../../public', File.dirname(__FILE__))
+		set :views, File.expand_path('../../views', File.dirname(__FILE__))
 
 		configure do
 			enable :logging
