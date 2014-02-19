@@ -1,4 +1,3 @@
-= haml :header
 .container
 
   = haml :upload
@@ -10,7 +9,6 @@
       .col-xs-12.col-md-4
         .gallery
           = Date.strptime(meta.created_at,'%Y%m%d%H%M%S')
-          = haml :sample
           %a.slidelink(href=""){:"data-intro" => (index == 0 ? 'COPY iframe tag to clipboard.' : nil)}
             %input.zclip(type="hidden" value="#{meta.htmlPath}")
               %i.glyphicon.glyphicon-share
