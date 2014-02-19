@@ -18,6 +18,7 @@ module PPTGallery
 	class App < Sinatra::Base
 		set :public_folder, File.expand_path('../../public', File.dirname(__FILE__))
 		set :views, File.expand_path('../../views', File.dirname(__FILE__))
+		set :protection, :except => :frame_options
 
 		configure do
 			enable :logging
