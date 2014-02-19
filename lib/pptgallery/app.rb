@@ -19,6 +19,7 @@ module PPTGallery
 		set :public_folder, File.expand_path('../../public', File.dirname(__FILE__))
 		set :views, File.expand_path('../../views', File.dirname(__FILE__))
 		set :protection, :except => :frame_options
+		set :method_override => true
 
 		configure do
 			enable :logging
