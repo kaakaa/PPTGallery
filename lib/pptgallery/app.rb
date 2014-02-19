@@ -1,5 +1,4 @@
-﻿require 'rubygems'
-require 'sinatra'
+﻿require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader' if development?
 require 'haml'
