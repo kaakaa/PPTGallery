@@ -1,6 +1,8 @@
 ﻿require 'RMagick'
 require 'haml'
 
+require File.expand_path('cmd_executor', File.dirname(__FILE__))
+
 class UploadedFile
 	def initialize(root, home, m)
 		@root = root

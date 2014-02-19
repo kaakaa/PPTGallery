@@ -1,0 +1,6 @@
+- if @pagenum != 1
+  %ul.pagination.pagination-sm
+    - for page in 1..@pagenum do
+      %li{:class => (@current == page ? 'active' : nil)}
+        %a{:href => (@current == page ? '#' : "/gallery/#{page}")}
+          = page

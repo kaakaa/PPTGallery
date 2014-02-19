@@ -36,7 +36,7 @@ module PPTGallery
 			MyLogger.log.info "#{request.ip} : Access in page #{params[:page]}"
 			@current = params[:page].to_i
 			@metaDataArray, @pagenum = getMetaDataForDisplay(@uploadDir, @current)
-			haml :upload
+			haml :main
 		end
 
 		post "/upload" do

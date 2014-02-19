@@ -1,0 +1,32 @@
+= haml :header
+.container
+
+  = haml :upload
+
+  %hr
+  = haml :pagination
+  .row
+    - @metaDataArray.each_with_index do |meta,index|
+      .col-xs-12.col-md-4
+        .gallery
+          = Date.strptime(meta.created_at,'%Y%m%d%H%M%S')
+          = haml :sample
+          %a.slidelink(href=""){:"data-intro" => (index == 0 ? 'COPY iframe tag to clipboard.' : nil)}
+            %input.zclip(type="hidden" value="#{meta.htmlPath}")
+              %i.glyphicon.glyphicon-share
+          %a.downloads_popover(href="" title="Downloads" data-html="true" data-placement="bottom" data-content=""){:"data-intro" => (index == 0 ? 'DOWNLOAD uploaded and converted files' : nil)}
+            %i.glyphicon.glyphicon-download
+          %form.delete_form(method='post' action="/delete" style="display: inline;"){:"data-intro" => (index == 0 ? 'DELETE uploaded and converted files' : nil)}
+            %input(type="hidden" name="_method" value="delete")
+            %input(type="hidden" name="target" value="#{meta.dirname}")
+            %a.delete(href="#")
+              %font(color="red")
+                %i.glyphicon.glyphicon-remove-sign 
+          %br
+          %a(href="#{meta.htmlPath}" target="blank")
+            %img.img-thumbnail(src="#{meta.thumnailPath}" width="360px" height="240px")
+          .popover_content(style='display: none;')
+            %a.btn.btn-xs.btn-primary(href="#{meta.relativePath}")= "#{meta.ext.upcase}"
+            %a.btn.btn-xs.btn-primary(href="#{meta.pdfPath}")= "PDF"
+            %a.btn.btn-xs.btn-primary(href="#{meta.htmlPath}" target="blank")= "HTML"
+  = haml :pagination
