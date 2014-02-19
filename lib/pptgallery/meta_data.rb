@@ -14,7 +14,6 @@ class MetaData
 	end
 
 	def dirname
-		# "#{@resourceDir}/#{@created_at}_#{@filename}"
 		"#{@resourceDir}/#{@created_at}_#{@filename}"
 	end
 

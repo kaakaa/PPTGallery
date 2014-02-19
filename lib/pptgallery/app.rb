@@ -6,12 +6,11 @@ require 'fileutils'
 require 'builder'
 require 'logger'
 
-require File.join(File.dirname(__FILE__), 'helpers')
-require File.join(File.dirname(__FILE__), 'uploaded_file')
-require File.join(File.dirname(__FILE__), 'meta_data')
-require File.join(File.dirname(__FILE__), 'post')
-require File.join(File.dirname(__FILE__), 'my_logger')
-require File.join(File.dirname(__FILE__), 'cmd_executor')
+require File.expand_path('helpers', File.dirname(__FILE__))
+require File.expand_path('uploaded_file', File.dirname(__FILE__))
+require File.expand_path('meta_data', File.dirname(__FILE__))
+require File.expand_path('post', File.dirname(__FILE__))
+require File.expand_path('my_logger', File.dirname(__FILE__))
 
 module PPTGallery
 	class App < Sinatra::Base

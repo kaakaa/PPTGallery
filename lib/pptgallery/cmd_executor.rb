@@ -1,9 +1,7 @@
 require 'systemu'
 
 class CommandExecutor
-
 	def self.jodconverter(uploadedFilePath, pdfPath)
-
 		date = "java -jar #{File.dirname(__FILE__)}/javalib/jodconverter-cli-2.2.2.jar #{uploadedFilePath} #{pdfPath}"
 		status, stdout, stderr = systemu date
 
