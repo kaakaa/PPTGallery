@@ -57,11 +57,8 @@ class UploadedFile
 		Dir.glob(File.join(@meta.dirname, "png", "*.png")).sort!.each{ |d|
 			images << d.gsub!(/#{@home}/, '')
 		}
-		engine = nil
-		File.open(File.expand_path('../../views/slide.haml', File.dirname(__FILE__))) do |f|
-			engine = Haml::Engine.new(f.read, :format => :xhtml).render(Object.new, :images => images, :title => @meta.filename)
-		end
-		File.write(File.join(@meta.dirname, "#{@meta.filename}.html"), engine) if !engine.nil?
+		source = partial('slide.haml', {:images => images, :title => @meta.filename})
+		File.write(File.join(@meta.dirname, "#{@meta.filename}.html"), source) if !source.nil?
 	end
 
 	def createMetaFile
@@ -70,5 +67,10 @@ class UploadedFile
 	
 	def uploadedFilePath
 		File.join(@meta.dirname, "#{@meta.filename}.#{@meta.ext}")
+	end
+
+	def partial(filename, options={})
+		contents = File.read(File.expand_path("templates/#{filename}", File.dirname(__FILE__)))
+		Haml::Engine.new(contents).render(self, options.merge!(:layout => false))
 	end
 end
