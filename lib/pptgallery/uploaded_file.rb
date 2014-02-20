@@ -46,9 +46,8 @@ class UploadedFile
 	def savePng
 		Dir.mkdir(File.join(@meta.dirname, "png"))
 		pdf = File.join(@meta.dirname, "#{@meta.filename}.pdf")
-		pdf_magick = Magick::ImageList.new(pdf){ self.density = 150 }
-		pdf_magick.each_with_index { |val, index|
-			pdf_magick[index].write(File.join(@meta.dirname, "png", "page#{format("%03d", index+1)}.png"))
+		Magick::ImageList.new(pdf){ self.density = 150 }.each_with_index { |img, index|
+			img.write(File.join(@meta.dirname, "png", "page#{format("%03d", index+1)}.png"))
 		}
 	end
 
