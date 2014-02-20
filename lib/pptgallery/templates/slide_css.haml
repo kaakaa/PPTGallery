@@ -1,0 +1,68 @@
+﻿:css
+  div#wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+  }
+  div#allslide{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    z-index: 10;
+    padding: 20px;
+  }
+  .one-of-all-slide{
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .selected-slide{
+    border: solid 4px red;
+    padding: -4px;
+    margin-bottom: -2px;
+  }
+  p.boxes{
+    display: none;
+    position absolute;
+    z-index: 1;
+  }
+  p#box1{
+    display: block;
+  }
+  .prev{
+    position: absolute;
+    left: -20px;
+    top: 0;
+    border: 0;
+    width: 100px;
+    height: 1000px;
+    opacity: 0;
+    background: -moz-linear-gradient(left, rgba(0,0,0,1), rgba(255,255,255,0));
+    background: -webkit-gradient(linear, left, right, from(rgba(0,0,0,0.5)), to(rgba(255,255,255,0)));
+  }
+  .next{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 0;
+    width: 100px;
+    height: 1000px;
+    opacity: 0;
+    background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(0,0,0,0.5));
+    background: -webkit-gradient(linear, left, right, from(rgba(255,255,255,0)), to(rgba(0,0,0,0.5)));
+  }
+  #controller{
+    width: 50%;
+    color: black;
+    text-align: center;
+    position: fixed;
+    top: 93%;
+    left: 25%;
+    background: rgba(255,255,255,0.5);
+    z-index: 100;
+  }
