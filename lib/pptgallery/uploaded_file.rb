@@ -44,20 +44,41 @@ class UploadedFile
 	end
 
 	def savePng
-		Dir.mkdir(File.join(@meta.dirname, "png"))
+		Dir.mkdir(File.join(@meta.dirname, "img"))
+		Dir.mkdir(File.join(@meta.dirname, "img_low"))
+
 		pdf = File.join(@meta.dirname, "#{@meta.filename}.pdf")
-		Magick::ImageList.new(pdf){ self.density = 150 }.each_with_index { |img, index|
-			img.write(File.join(@meta.dirname, "png", "page#{format("%03d", index+1)}.png"))
-		}
+
+		writeSlideImages('img', pdf, {:quality => 80, :density => '150'})
+		writeSlideImages('img_low', pdf, {:quality => 10, :density => '50'})
+	end
+
+	def writeSlideImages(dirname, file, options = {})
+		getImageList(file, options).each_with_index do |img, index|
+			path = File.join(@meta.dirname, dirname, "page#{format("%03d", index+1)}.jpg")
+			img.write(path)
+		end
+	end
+
+	def getImageList(file, options = {})
+		Magick::ImageList.new(file) do
+			self.format = options[:format] || 'JPEG'
+			self.quality = options[:quality] || 100
+			self.density = options[:density] || '100'
+		end
 	end
 
 	def makeHtml
-		images = Array.new
-		Dir.glob(File.join(@meta.dirname, "png", "*.png")).sort!.each{ |d|
-			images << d.gsub!(/#{@home}/, '')
-		}
-		source = partial('slide.haml', {:images => images, :title => @meta.filename})
+		images = getImages('img')
+		images_low = getImages('img_low')
+		source = partial('slide.haml', {:images => images, :images_low => images_low, :title => @meta.filename})
 		File.write(File.join(@meta.dirname, "#{@meta.filename}.html"), source) if !source.nil?
+	end
+
+	def getImages(dirname)
+		Dir.glob(File.join(@meta.dirname, dirname, "*.jpg")).sort!.collect{ |img|
+			img.gsub!(/#{@home}/, '')
+		}
 	end
 
 	def createMetaFile

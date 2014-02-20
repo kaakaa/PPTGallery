@@ -15,7 +15,7 @@ describe MetaData do
 		meta = MetaData.create(@root, 'sample.ppt')
 		expect(meta.dirname).to match /#{upload_path}\/[0-9]{14}_sample/
 		expect(meta.htmlPath).to match /^\/uploads\/[0-9]{14}_sample\/sample\.html$/
-		expect(meta.thumnailPath).to match /^\/uploads\/[0-9]{14}_sample\/png\/page001\.png$/
+		expect(meta.thumnailPath).to match /^\/uploads\/[0-9]{14}_sample\/img\/page001\.jpg$/
 		expect(meta.pdfPath).to match /^\/uploads\/[0-9]{14}_sample\/sample\.pdf$/
 		expect(meta.relativePath).to match /^\/uploads\/[0-9]{14}_sample\/sample\.ppt$/
 	end
@@ -24,7 +24,7 @@ describe MetaData do
 		meta = MetaData.create(@root, 'sample.tmp.ppt')
 		expect(meta.dirname).to  match /#{upload_path}\/[0-9]{14}_sample\.tmp/
 		expect(meta.htmlPath).to match /^\/uploads\/[0-9]{14}_sample\.tmp\/sample\.tmp\.html$/
-		expect(meta.thumnailPath).to match /^\/uploads\/[0-9]{14}_sample\.tmp\/png\/page001\.png$/
+		expect(meta.thumnailPath).to match /^\/uploads\/[0-9]{14}_sample\.tmp\/img\/page001\.jpg$/
 		expect(meta.pdfPath).to match /^\/uploads\/[0-9]{14}_sample\.tmp\/sample\.tmp\.pdf$/
 		expect(meta.relativePath).to match /^\/uploads\/[0-9]{14}_sample\.tmp\/sample\.tmp\.ppt$/
 	end

@@ -22,7 +22,9 @@ class MetaData
 	end
 
 	def thumnailPath
-		"#{dirname.split(@publicPath)[-1]}/png/page001.png"
+		thumb = "#{dirname.split(@publicPath)[-1]}/png/page001.png"
+		thumb = "#{dirname.split(@publicPath)[-1]}/img/page001.jpg" if !File.exists?("#{@publicPath}/#{thumb}")
+		thumb
 	end
 
 	def pdfPath

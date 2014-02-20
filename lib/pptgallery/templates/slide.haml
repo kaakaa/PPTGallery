@@ -83,7 +83,7 @@
     = partial 'slide_controller.haml'
 
     .row#allslide
-      - images.each_with_index do |image, index|
+      - images_low.each_with_index do |image, index|
         .col-xs-6.col-md-3.one-of-all-slide
           %input(type="image" src="#{image}" width="240px" onClick="selectPage(#{index})")
     %script(src="http://code.jquery.com/jquery.min.js")

@@ -30,7 +30,8 @@ describe PPTGallery::App do
 		expect(Dir.glob(File.join(upload_path, '**/sample.ppt')).count).to eq(1)
 		expect(Dir.glob(File.join(upload_path, '**/sample.pdf')).count).to eq(1)
 		expect(Dir.glob(File.join(upload_path, '**/sample.html')).count).to eq(1)
-		expect(Dir.glob(File.join(upload_path, '**/png/page*.png')).count).to eq(8)
+		expect(Dir.glob(File.join(upload_path, '**/img/page*.jpg')).count).to eq(8)
+		expect(Dir.glob(File.join(upload_path, '**/img_low/page*.jpg')).count).to eq(8)
 	end
 
 	it 'can upload and convert pdf file' do
@@ -43,6 +44,7 @@ describe PPTGallery::App do
 		expect(Dir.glob(File.join(upload_path, '**/sample.ppt')).count).to eq(0)
 		expect(Dir.glob(File.join(upload_path, '**/sample.pdf')).count).to eq(1)
 		expect(Dir.glob(File.join(upload_path, '**/sample.html')).count).to eq(1)
-		expect(Dir.glob(File.join(upload_path, '**/png/page*.png')).count).to eq(8)
+		expect(Dir.glob(File.join(upload_path, '**/img/page*.jpg')).count).to eq(8)
+		expect(Dir.glob(File.join(upload_path, '**/img_low/page*.jpg')).count).to eq(8)
 	end
 end
