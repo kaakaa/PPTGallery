@@ -24,7 +24,8 @@
           %a(href="#{meta.htmlPath}" target="blank")
             %img.img-thumbnail(src="#{meta.thumnailPath}" width="360px" height="240px")
           .popover_content(style='display: none;')
-            %a.btn.btn-xs.btn-primary(href="#{meta.relativePath}")= "#{meta.ext.upcase}"
+            - if meta.ext.upcase != 'PDF'
+              %a.btn.btn-xs.btn-primary(href="#{meta.relativePath}")= "#{meta.ext.upcase}"
             %a.btn.btn-xs.btn-primary(href="#{meta.pdfPath}")= "PDF"
             %a.btn.btn-xs.btn-primary(href="#{meta.htmlPath}" target="blank")= "HTML"
   = haml :pagination
