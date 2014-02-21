@@ -85,3 +85,14 @@
     var page = wrapper.find('p:eq(' + index + ')');
     go(page);
   }
+  $('#toggle_controller').click(function(){
+    var ctr_position = ($('#controller').position().top / $(window).height()) * 100;
+    if(~~ctr_position == 95){
+      $('#controller').animate({'top': '100%'});
+      $('#toggle_controller').animate({'top': '95%'});
+    }
+    if(~~ctr_position == 100){
+      $('#controller').animate({'top': '95%'});
+      $('#toggle_controller').animate({'top': '90%'});
+    }
+  });
