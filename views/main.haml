@@ -3,7 +3,9 @@
   = haml :upload
 
   %hr
+
   = haml :pagination
+
   .row
     - @metaDataArray.each_with_index do |meta,index|
       .col-xs-12.col-md-4
@@ -28,4 +30,5 @@
               %a.btn.btn-xs.btn-primary(href="#{meta.relativePath}")= "#{meta.ext.upcase}"
             %a.btn.btn-xs.btn-primary(href="#{meta.pdfPath}")= "PDF"
             %a.btn.btn-xs.btn-primary(href="#{meta.htmlPath}" target="blank")= "HTML"
+
   = haml :pagination

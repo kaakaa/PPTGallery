@@ -12,9 +12,11 @@
     %link(href="/css/introjs.css" rel="stylesheet")
     :css
       div.gallery { margin-bottom: 50px; }
+      div.github-ribbon { position: absolute; top: 0; right: 0; border: 0; z-index: 9999; }
     %title
       PPTGallery
   %body
+    = haml :forkme
     = haml :header
     = yield
 
