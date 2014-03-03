@@ -4,7 +4,9 @@
     top: 0;
     left: 0;
     margin: 0 auto;
+    padding: 0 auto;
     width: 100%;
+    overflow-x: hidden;
   }
   div#allslide{
     display: none;
@@ -26,13 +28,16 @@
     padding: -4px;
     margin-bottom: -2px;
   }
-  p.boxes{
+  img.boxes{
+    float: left;
     display: none;
-    position absolute;
+    position relative;
+    margin: 0;
     z-index: 1;
   }
   p#box1{
     display: block;
+    z-index: 10;
   }
   .prev{
     position: absolute;
@@ -73,5 +78,13 @@
     top: 95%;
     left: 25%;
     background: rgba(255,255,255,0.5);
+    z-index: 100;
+  }
+  #settings{
+    width: 5%;
+    text-align: center;
+    position: fixed;
+    top: 2%;
+    left: 90%;
     z-index: 100;
   }
