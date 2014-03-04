@@ -10,10 +10,16 @@
     %link(href="/css/bootstrap.min.css" rel="stylesheet")
     %title= "#{title}"
   %body
-    #wrapper(align="center")
+    #settings
+      %button.btn.btn-default.settings-button(style='border: 0;')
+        %font(color="grey" size="5em" weight="150%")
+          %i.glyphicon.glyphicon-cog
+    #wrapper
       - images.each_with_index do |image, index|
-        %p.boxes{:id => (index == 0 ? 'box1' : nil)}
-          %img(src="#{image}")
+        - if index == 0
+          %img#box1.boxes(src="#{image}")
+        - else
+          %img.boxes(src="#{image}")
 
     = partial 'slide_controller.haml'
 
@@ -22,5 +28,5 @@
         .col-xs-6.col-md-3.one-of-all-slide
           %input(type="image" src="#{image}" width="240px" onClick="selectPage(#{index})")
     %script(src="http://code.jquery.com/jquery.min.js")
-
-    = partial 'slide_js.haml'
+    %script(src="/js/slide/slide.js")
+    %script(src="/js/slide/slide_effect.js")
