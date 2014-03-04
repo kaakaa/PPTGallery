@@ -38,7 +38,9 @@ function go(page, direction) {
   if($('div#wrapper img').index(page) != $('div#wrapper img').index(now)) {
     sliding(now, page);
     setPageNumber($('div#wrapper img').index(page));
-    console.log(page.css('margin-left'));
+    resize(page);
+    current = $('div#wrapper img').index(wrapper.find("img:visible"));
+    spotOneInAllSlide(current);
   }
 };
 $("input:button.prev").click(function() {
@@ -95,10 +97,17 @@ $('#toggle_controller').click(function(){
     $('#toggle_controller').animate({'top': '90%'});
   }
 });
+
 $("#settings").children("button.settings-button").click(function() {
-  console.log("setting button push");
-  tags = getEffectMenu();
-  console.log(tags);
-  $("#settings").append(tags);
+  var menu = $(this).parent().find("p");
+  if(menu.length > 0){
+    menu.remove();
+  } else {
+    tags = getEffectMenu();
+    $("#settings").append(tags);
+  }
 });
 
+$(document).on("click", "a[id^=effect-menu-]", function(){
+  $(this).parent().parent().find("p").remove();
+});

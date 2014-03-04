@@ -16,7 +16,10 @@
           %i.glyphicon.glyphicon-cog
     #wrapper
       - images.each_with_index do |image, index|
-        %img.boxes(src="#{image}")
+        - if index == 0
+          %img#box1.boxes(src="#{image}")
+        - else
+          %img.boxes(src="#{image}")
 
     = partial 'slide_controller.haml'
 

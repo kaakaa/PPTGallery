@@ -9,16 +9,12 @@ function getEffectMenu() {
   var tags = "";
   for(param in EFFECT){
     var className = "effect-menu-" + EFFECT[param];
-    tags += "<button class='btn btn-default' id='" + className + "' style='border: 0;'>";
-    tags += "<font color='grey' size='5em' weight='150%'>";
-    tags += "<i class='glyphicon glyphicon-picture'></i>";
-    tags += "</font>";
-    tags += "</button>";
+    tags += "<p><a id='" + className + "' href='javascript:void(0);'>" + param + "</a></p>";
   }
   return tags;
 }
 
-$(document).on('click', "button[id^='effect-menu-']", function(){
+$(document).on('click', "a[id^='effect-menu-']", function(){
   nowEffect = Number($(this).attr("id").slice(-1));
 });
 
@@ -72,7 +68,6 @@ function getSlideEffect(pattern, direction) {
 
           pre();
           sliding();
-          after(next);
         };
   case EFFECT.SLIDE:
     return function(now, next){
@@ -124,7 +119,6 @@ function getSlideEffect(pattern, direction) {
 
           pre();
           sliding();
-          after(next);
         };
   case EFFECT.FADE:
   default:
@@ -132,16 +126,10 @@ function getSlideEffect(pattern, direction) {
         now.fadeOut("fast", function(){
           next.fadeIn("fast");
         });
-        after(next);
     };
   }
 }
 
-function after(next){
-          resize(next);
-          current = $('div#wrapper img').index(wrapper.find("img:visible"));
-          spotOneInAllSlide(current);
-}
 
 function pre(movement, now, next){
 }
