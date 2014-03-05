@@ -3,7 +3,6 @@ var resize = function(page) {
   var scale = Math.min($(window).width() / page.width(), $(window).height() / page.height());
   page.width(page.width() * scale);
   var pad = ($(window).width() - page.width()) / 2;
-  console.log(pad);
   page.css("margin-left", pad);
 };
 function setPageNumber(current) {
@@ -32,14 +31,14 @@ function selectPage(index){
   goPage(index);
   toggleAllSlide();
 };
-function go(page, direction) {
+function go(next, direction) {
   var now = wrapper.find("img:visible");
   var sliding = getSlideEffect(nowEffect, direction);
-  if($('div#wrapper img').index(page) != $('div#wrapper img').index(now)) {
-    sliding(now, page);
-    setPageNumber($('div#wrapper img').index(page));
-    resize(page);
-    current = $('div#wrapper img').index(wrapper.find("img:visible"));
+  if($('div#wrapper img').index(next) != $('div#wrapper img').index(now)) {
+    sliding(now, next);
+    setPageNumber($('div#wrapper img').index(next));
+    resize(next);
+    current = $('div#wrapper img').index(next);
     spotOneInAllSlide(current);
   }
 };
