@@ -36,11 +36,8 @@ function getSlideEffect(pattern, direction) {
             next.toggle();
             next.css("opacity", "0.1");
             if(direction == 'prev'){
-              next.css("margin-top", imgHeight);
-              now.css("margin-top", -2 * imgHeight);
-            } else {
-              next.css("margin-top", -2 * imgHeight);
-            }
+              next.css("margin-top", -1 * imgHeight);
+            } 
           };
 
           var sliding = function(){
@@ -56,11 +53,11 @@ function getSlideEffect(pattern, direction) {
               );
             } else {
               now.animate(
-                { marginTop: imgHeight, opacity: "toggle" },
+                { marginTop: -1 * imgHeight, opacity: "toggle" },
                 getEffectSetting(afterFunction)
               ); 
               next.animate(
-                { marginTop: -2 * imgHeight, opacity: 1 },
+                { marginTop: 0, opacity: 1 },
                 getEffectSetting(afterFunction)
               ); 
             }
@@ -72,7 +69,7 @@ function getSlideEffect(pattern, direction) {
   case EFFECT.SLIDE:
     return function(now, next){
           var movement = $(window).width();
-          if(direction == "prev"){
+          if(direction == "next"){
             movement *= -1;
           }
 
@@ -80,13 +77,13 @@ function getSlideEffect(pattern, direction) {
             next.css('opacity',0);
             next.toggle();
             if(movement < 0){
+              var pad = ($(window).width() - now.width()) / 2;
+              next.css("margin-left", pad + now.width());
+            } else {
               var nextWidth = next.width();
               var pad = ($(window).width() - nextWidth) / 2;
-              next.css("margin-left", -1 * movement);
-              now.css("margin-left", -1 * nextWidth + pad + movement);
-            } else {
-              var pad = ($(window).width() - now.width()) / 2;
-              next.css("margin-left", pad - movement - now.width());
+              now.css("margin-left", pad);
+              next.css("margin-left", -1 * (nextWidth + pad));
             }
           }
 
@@ -98,20 +95,20 @@ function getSlideEffect(pattern, direction) {
 
             if(movement < 0){
               now.animate(
-                { marginLeft: -2 * (nowWidth + pad), opacity: "toggle" },
-                getEffectSetting(afterFunctionZero)
-              );
-              next.animate(
-                { marginLeft: pad, opacity: "1.0" },
-                getEffectSetting(afterFunctionPad)
-              );
-            } else {
-              now.animate(
                 { marginLeft: movement, opacity: "toggle" },
                 getEffectSetting(afterFunctionZero)
               );
               next.animate(
-                { marginLeft: -1 * nowWidth - (movement - pad), opacity: "1.0" },
+                { marginLeft: -1 * (nowWidth + movement + pad), opacity: "1.0" },
+                getEffectSetting(afterFunctionPad)
+              );
+            } else {
+              now.animate(
+                { marginLeft: nowWidth + pad + pad, opacity: "toggle" },
+                getEffectSetting(afterFunctionZero)
+              );
+              next.animate(
+                { marginLeft: pad, opacity: "1.0" },
                 getEffectSetting(afterFunctionPad)
               );
             }
