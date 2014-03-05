@@ -6,11 +6,11 @@ var resize = function(page) {
   page.css("margin-left", pad);
 };
 function setPageNumber(current) {
-  var allNumber = wrapper.find("img").size();
-  $("#pageNumber").text((current + 1) + '/' + allNumber);
+  $("#current_page_number").val(current + 1);
 };
 $(document).ready( function() {
   setPageNumber(0);
+  $("#all_page_number").text('/ ' + wrapper.find("img").size());
   resize(wrapper.find("img:visible"));
   spotOneInAllSlide(0);
 });
@@ -31,6 +31,16 @@ function selectPage(index){
   goPage(index);
   toggleAllSlide();
 };
+
+$("#current_page_number").keypress(function(e){
+  if(e.keyCode == 13){
+    var pageNum = $(this).val() - 1;
+    if(0 <= pageNum && pageNum <= wrapper.find("img").size() - 1){
+      goPage($(this).val() - 1);
+    }
+  }
+});
+
 function go(next, direction) {
   var now = wrapper.find("img:visible");
   var sliding = getSlideEffect(nowEffect, direction);
@@ -83,7 +93,13 @@ function goLast(){
 }
 function goPage(index){
   var page = wrapper.find('img:eq(' + index + ')');
-  go(page, "none");
+  var current = $('div#wrapper img').index(wrapper.find('img:visible'));
+
+  if(current < index){
+    go(page, "next");
+  } else if(current > index){
+    go(page, "prev");
+  }
 }
 $('#toggle_controller').click(function(){
   var ctr_position = ($('#controller').position().top / $(window).height()) * 100;

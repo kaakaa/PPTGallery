@@ -9,7 +9,9 @@
   %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goPrev()")
     %font(size="2em" color="white")
       %i.glyphicon.glyphicon-backward |
-  %button#pageNumber.btn.btn-inverse(onClick="toggleAllSlide()")
+  %span#page_number
+    %input#current_page_number(type="text")
+    %span#all_page_number
   %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goNext()")
     %font(size="2em" color="white")
       %i.glyphicon.glyphicon-forward |

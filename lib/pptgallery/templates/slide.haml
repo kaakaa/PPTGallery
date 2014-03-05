@@ -10,10 +10,15 @@
     %link(href="/css/bootstrap.min.css" rel="stylesheet")
     %title= "#{title}"
   %body
-    #settings
-      %button.btn.btn-default.settings-button(style='border: 0;')
-        %font(color="grey" size="5em" weight="150%")
-          %i.glyphicon.glyphicon-cog
+    #menu
+      #toggle_all
+        %button.btn.btn-default.toggleall-button(onclick='toggleAllSlide()' style='border: 0;')
+          %font(color="grey" size="5em" weight="150%")
+            %i.glyphicon.glyphicon-th
+      #settings
+        %button.btn.btn-default.settings-button(style='border: 0;')
+          %font(color="grey" size="5em" weight="150%")
+            %i.glyphicon.glyphicon-cog
     #wrapper
       - images.each_with_index do |image, index|
         - if index == 0
