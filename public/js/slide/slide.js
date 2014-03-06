@@ -126,3 +126,18 @@ $("#settings").children("button.settings-button").click(function() {
 $(document).on("click", "a[id^=effect-menu-]", function(){
   $(this).parent().parent().find("p").remove();
 });
+
+$(window).keydown(function(e){
+  switch(e.keyCode){
+  case 13: goNext(); break; // Enter => goto next
+  case 65: toggleAllSlide(); break; // 'a' => toggle all slides
+  case 78: goNext(); break; // 'n' => goto next
+  case 80: goPrev(); break; // 'p' => goto previous
+  case 87: whiteout(); break; //'w' => white out screen
+  }
+});
+
+function whiteout(){
+  $("div:not(#allslide)").animate({ opacity: 'toggle'});
+}
+
