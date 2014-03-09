@@ -4,9 +4,7 @@
     %meta(charset="utf-8")
     %meta(http-equiv="X-UA-Compatible" content="IE=edge")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-
-    = partial 'slide_css.haml'
-
+    %link(href="/css/slide/slide.css" rel="stylesheet")
     %link(href="/css/bootstrap.min.css" rel="stylesheet")
     %title= "#{title}"
   %body
@@ -15,6 +13,15 @@
         %button.btn.btn-default.toggleall-button(onclick='toggleAllSlide()' style='border: 0;')
           %font(color="grey" size="5em" weight="150%")
             %i.glyphicon.glyphicon-th
+      #presentation
+        %button.btn.btn-default(onclick="presentationSetting()" style="border: 0;")
+          %font(color="grey" size="5em" weight="150%")
+            %i.glyphicon.glyphicon-time
+        .popover_content(style="display:none;")
+          .form-inline
+            %input(type="text" name="presentation_min" style="width: 35px" value="20")
+            = " : 00  "
+            %button.btn.btn-sm.btn-danger(onclick="presentationStart()")= "START"
       #settings
         %button.btn.btn-default.settings-button(style='border: 0;')
           %font(color="grey" size="5em" weight="150%")
@@ -28,10 +35,17 @@
 
     = partial 'slide_controller.haml'
 
+    #track
+      %div
+        %img#rabbit(style="display:none")
+      %div
+        %img#turtle(style="display:none")
+
     .row#allslide
       - images_low.each_with_index do |image, index|
         .col-xs-6.col-md-3.one-of-all-slide
           %input(type="image" src="#{image}" width="240px" onClick="selectPage(#{index})")
     %script(src="/js/jquery.min.js")
+    %script(src="/js/bootstrap.js")
     %script(src="/js/slide/slide.js")
     %script(src="/js/slide/slide_effect.js")

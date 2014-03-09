@@ -1,21 +1,21 @@
 #toggle_controller
-  %button.btn.btn-default(style="border: 0;")
+  %button.btn.btn-default(style="border: 0; background: rgba(255,255,255,0.1)")
     %font(size="5em" color="grey" weight="150%")
       %i.glyphicon.glyphicon-eject |
 #controller
-  %button.btn.btn-inverse(style="background: rgba(0,0,0,0.5)" onClick="goFirst()")
+  %button.btn.btn-inverse(style="background: rgba(0,0,0,0.4)" onClick="goFirst()")
     %font(size="2em" color="white" weight="150%")
       %i.glyphicon.glyphicon-fast-backward |
-  %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goPrev()")
+  %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.4)" onClick="goPrev()")
     %font(size="2em" color="white")
       %i.glyphicon.glyphicon-backward |
   %span#page_number
     %input#current_page_number(type="text")
     %span#all_page_number
-  %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goNext()")
+  %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.4)" onClick="goNext()")
     %font(size="2em" color="white")
       %i.glyphicon.glyphicon-forward |
-  %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.5)" onClick="goLast()")
+  %button.btn.btn-inverse(style="background-color: rgba(0,0,0,0.4)" onClick="goLast()")
     %font(size="2em" color="white")
       %i.glyphicon.glyphicon-fast-forward |
 %input.prev(type="button" value=" ")

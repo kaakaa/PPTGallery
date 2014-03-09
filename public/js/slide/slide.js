@@ -50,6 +50,7 @@ function go(next, direction) {
     resize(next);
     current = $('div#wrapper img').index(next);
     spotOneInAllSlide(current);
+    runRabbit(current);
   }
 };
 $("input:button.prev").click(function() {
@@ -141,3 +142,34 @@ function whiteout(){
   $("div:not(#allslide)").animate({ opacity: 'toggle'});
 }
 
+function presentationSetting(){
+  $("#presentation").popover({
+    html: true,
+    placement: "left",
+    container: "body",
+    title: "Set Presentation Time",
+    content: function(){
+      return $(".popover_content").html();
+    }
+  });
+}
+
+function presentationStart(){
+  // "display: none;" のdiv要素をpopoverで出現させているので":eq(1)"が必要
+  var min = parseInt($(":text[name='presentation_min']:visible").val());
+  var rabbit = $("#rabbit");
+  var turtle = $("#turtle");
+
+  rabbit.css("left","0%");
+  $("#rabbit").show();
+  turtle.css("left","0%");
+  $("#turtle").show();
+
+  $("#turtle").animate({'left': '97%'},{duration: (min * 60) * 1000, queue: false});
+  $("#presentation").popover('hide');
+};
+
+function runRabbit(current){
+  var here = 97 * current / (wrapper.find("img").size() - 1);
+  $("#rabbit").css("left", (here) + '%');
+}
