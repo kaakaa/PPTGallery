@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="64" height="64" viewBox="0 0 120 120">
+    <g fill='#ffb6c1'>
+        <g transform='translate(40 60) rotate(-20)'>
+            <ellipse rx='30' ry='22'/>
+        </g>
+        
+        <g transform='translate(50 12) rotate(60)'>
+            <ellipse rx='12' ry='6'/>
+        </g>
+        <g transform='translate(60 12) rotate(60)'>
+            <ellipse rx='12' ry='6'/>
+        </g>
+        <g transform='translate(70 35) rotate(30)'>
+            <ellipse rx='24' ry='15'/>
+        </g>
+        <circle cx='77' cy='30' r='3' fill='black'/>
+        <circle cx='92' cy='43' r='2' fill='black'/>
+        
+        <circle cx='10' cy='67' r='6'/>
+        <ellipse cx='35' cy='85' rx='14' ry='8'/>
+        <g transform='translate(65 75) rotate(45)'>
+            <ellipse rx='12' ry='7'/>
+        </g>
+    </g>
+</svg>

@@ -99,8 +99,8 @@ img#box1{
   left: 2%;
 }
 #rabbit::after{
-  content: url("./rabbit.gif");
+  content: url("./rabbit.svg");
 }
 #turtle::after{
-  content: url("./turtle.gif");
+  content: url("./turtle.svg");
 }
