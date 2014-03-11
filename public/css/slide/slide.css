@@ -30,7 +30,7 @@ div#allslide{
 img.boxes{
   float: left;
   display: none;
-  position relative;
+  position: relative;
   margin: 0;
   z-index: 1;
 }

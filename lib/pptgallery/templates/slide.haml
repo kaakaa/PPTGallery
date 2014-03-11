@@ -36,10 +36,8 @@
     = partial 'slide_controller.haml'
 
     #track
-      %div
-        %img#rabbit(style="display:none")
-      %div
-        %img#turtle(style="display:none")
+      #rabbit(style="display:none")
+      #turtle(style="display:none")
 
     .row#allslide
       - images_low.each_with_index do |image, index|
