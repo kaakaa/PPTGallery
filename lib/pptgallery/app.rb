@@ -21,6 +21,8 @@ module PPTGallery
 
 		configure do
 			enable :logging
+			mime_type :svg, 'image/svg+xml'
+			mime_type :svgz, 'image/svg+xml'
 		end
 
 		before do
