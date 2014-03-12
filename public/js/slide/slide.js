@@ -165,6 +165,7 @@ $(document).on("click", "a[id^=effect-menu-]", function(){
 $(window).keydown(function(e){
   var isAllSlideMode = $("#allslide").is(":visible");
   switch(e.keyCode){
+  case 13: if(isAllSlideMode){ toggleAllSlide(); }; break; // Enter => toggleAllSlide
   case 37: goPrev(); break; // → => goto prev
   case 38: if(isAllSlideMode){ goTop(); }; break; // ↑ => goto page of top
   case 39: goNext(); break; // ← => goto next
