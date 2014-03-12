@@ -31,7 +31,7 @@
         - if index == 0
           %img#box1.boxes(src="#{image}")
         - else
-          %img.boxes(src="#{image}")
+          %img.boxes(src="/css/slide/lazyload.svg" data-original="#{image}")
 
     = partial 'slide_controller.haml'
 

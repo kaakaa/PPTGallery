@@ -8,7 +8,7 @@ var resize = function(page) {
 function setPageNumber(current) {
   $("#current_page_number").val(current + 1);
 };
-$(document).ready( function() {
+$(document).ready(function() {
   setPageNumber(0);
   $("#all_page_number").text('/ ' + wrapper.find("img").size());
   resize(wrapper.find("img:visible"));
@@ -37,19 +37,29 @@ $("#current_page_number").keypress(function(e){
     goPage($(this).val() - 1);
   }
 });
-
 function go(next, direction) {
   var now = wrapper.find("img:visible");
-  var sliding = getSlideEffect(nowEffect, direction);
   if($('div#wrapper img').index(next) != $('div#wrapper img').index(now)) {
-    sliding(now, next);
-    setPageNumber($('div#wrapper img').index(next));
-    resize(next);
-    current = $('div#wrapper img').index(next);
-    spotOneInAllSlide(current);
-    runRabbit(current);
+    if(next.attr("data-original")){
+      next.attr("src", next.attr("data-original"));
+      next.removeAttr("data-original");
+      next.load(function(){
+        slidePage(now, next, direction);
+      });
+    } else {
+      slidePage(now, next);
+    }
   }
 };
+function slidePage(now, next, direction){
+  var sliding = getSlideEffect(nowEffect, direction);
+  setPageNumber($('div#wrapper img').index(next));
+  sliding(now, next);
+  resize(next);
+  current = $('div#wrapper img').index(next);
+  spotOneInAllSlide(current);
+  runRabbit(current);
+}
 $("input:button.prev").click(function() {
   var prev = wrapper.find("img:visible").prev();
   if(prev.length != 0){
