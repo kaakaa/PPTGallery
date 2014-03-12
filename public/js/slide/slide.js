@@ -34,10 +34,7 @@ function selectPage(index){
 
 $("#current_page_number").keypress(function(e){
   if(e.keyCode == 13){
-    var pageNum = $(this).val() - 1;
-    if(0 <= pageNum && pageNum <= wrapper.find("img").size() - 1){
-      goPage($(this).val() - 1);
-    }
+    goPage($(this).val() - 1);
   }
 });
 
@@ -76,6 +73,10 @@ function goFirst(){
   var first = wrapper.find('img:first');
   go(first, "prev");
 }
+function goLast(){
+  var last = wrapper.find('img:last');
+  go(last, "next");
+}
 function goPrev(){
   var prev = wrapper.find('img:visible').prev();
   if(prev.length != 0) {
@@ -88,11 +89,34 @@ function goNext(){
     go(next, "next");
   }
 }
-function goLast(){
-  var last = wrapper.find('img:last');
-  go(last, "next");
+function goTop(){
+  var GRID_CHANGE_WIDTH = 992; // bootstrap col-md grid chenge point
+  var current = $('div#wrapper img').index(wrapper.find('img:visible'));
+  if($(window).width() >= GRID_CHANGE_WIDTH){
+    current -= 4;
+  } else {
+    current -= 2;
+  }
+  goPage(current);
+}
+function goBottom(){
+  var GRID_CHANGE_WIDTH = 992; // bootstrap col-md grid chenge point
+  var current = $('div#wrapper img').index(wrapper.find('img:visible'));
+  if($(window).width() >= GRID_CHANGE_WIDTH){
+    current += 4;
+  } else {
+    current += 2;
+  }
+  goPage(current);
 }
 function goPage(index){
+  if(index < 0){
+    index = 0;
+  }
+  var maxPage = wrapper.find('img').size() - 1;
+  if(maxPage < index){
+    index = maxPage;
+  }
   var page = wrapper.find('img:eq(' + index + ')');
   var current = $('div#wrapper img').index(wrapper.find('img:visible'));
 
@@ -129,8 +153,12 @@ $(document).on("click", "a[id^=effect-menu-]", function(){
 });
 
 $(window).keydown(function(e){
+  var isAllSlideMode = $("#allslide").is(":visible");
   switch(e.keyCode){
-  case 13: goNext(); break; // Enter => goto next
+  case 37: goPrev(); break; // → => goto prev
+  case 38: if(isAllSlideMode){ goTop(); }; break; // ↑ => goto page of top
+  case 39: goNext(); break; // ← => goto next
+  case 40: if(isAllSlideMode){ goBottom(); } break; // ↓ => goto page of bottom
   case 65: toggleAllSlide(); break; // 'a' => toggle all slides
   case 78: goNext(); break; // 'n' => goto next
   case 80: goPrev(); break; // 'p' => goto previous
