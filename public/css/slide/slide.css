@@ -90,13 +90,11 @@ img#box1{
   z-index: 100;
 }
 
-#track{
-  z-index: 50;
-}
 #rabbit, #turtle{
   position: fixed;
   top: 93%;
   left: 2%;
+  z-index: 50;
 }
 #rabbit::after{
   content: url("./rabbit.svg");
