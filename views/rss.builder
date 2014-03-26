@@ -3,6 +3,7 @@ xml.rss :version => "2.0" do
 	xml.channel do
 		xml.title "PPTGallery"
 		xml.description "PPTGallery is PowerPoint slide uploader on CentOS"
+		xml.link @posts[0].link
 		xml.language "ja-JP"
 		xml.pubDate @lastBuildDate.strftime("%a, %d %b %Y %X %Z")
 		xml.lastBuildDate @lastBuildDate.strftime("%a, %d %b %Y %X %Z")
