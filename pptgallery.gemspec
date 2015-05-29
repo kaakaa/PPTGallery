@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'haml'
   spec.add_dependency 'rack'
   spec.add_dependency 'rmagick'
-  spec.add_dependency 'systemu'
   spec.add_dependency 'libreconv'
 
   spec.add_development_dependency "bundler"
