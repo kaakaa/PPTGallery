@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MIT License - ChooseALicense.com</title>
+    <meta name="description" content="A permissive license that is short and to the point. It lets people do anything with your code with proper attribution and without warranty.">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Chivo:900">
+    <link rel="stylesheet" href="/assets/css/application.css?v=c0ca64aae4be03e65ddb3d2ce0d505434541ea8b">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!--[if lt IE 9]>
+    <script src="/assets/vendor/html5shiv/dist/html5shiv.js"></script>
+    <script src="/assets/vendor/selectivizr/selectivizr.js"></script>
+    <![endif]-->
+  </head>
+  <body class="license">
+    <div class="container">
+
+      
+  <ol>
+    <li>
+      
+        <a href="/">Home</a> / <a href="/licenses/">Licenses</a>
+      
+    </li>
+  </ol>
+
+
+      
+        <h1>MIT License</h1>
+      
+
+
+      <div class="clearfix">
+        <div class="license-body">
+          <pre id="license-text">The MIT License (MIT)
+
+Copyright (c) 2015 kaakaa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre>
+        </div> <!-- /license-body -->
+
+<div class="sidebar">
+
+  <a href="#" data-clipboard-target="license-text" data-proofer-ignore="true" class="js-clipboard-button button">Copy license text to clipboard</a>
+  <div class="how-to-apply">
+    <h5>How to apply this license</h5>
+    <p>
+      Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.
+    </p>
+    
+  </div>
+  
+  <div class="source">
+    <a href="http://opensource.org/licenses/MIT">
+      <span class="license-sprite"></span>
+      Source
+    </a>
+  </div>
+  
+
+  <div class="license-rules license-rules-sidebar">
+
+  
+  
+    <h3>Required</h3>
+    <ul class="license-required">
+      
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          <li class="include-copyright">
+            <span class="license-sprite"></span>
+            License and copyright notice
+          </li>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    </ul>
+  
+    <h3>Permitted</h3>
+    <ul class="license-permitted">
+      
+      
+        
+        
+          <li class="commercial-use">
+            <span class="license-sprite"></span>
+            Commercial Use
+          </li>
+        
+      
+        
+        
+          <li class="distribution">
+            <span class="license-sprite"></span>
+            Distribution
+          </li>
+        
+      
+        
+        
+          <li class="modifications">
+            <span class="license-sprite"></span>
+            Modification
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          <li class="private-use">
+            <span class="license-sprite"></span>
+            Private Use
+          </li>
+        
+      
+        
+        
+          <li class="sublicense">
+            <span class="license-sprite"></span>
+            Sublicensing
+          </li>
+        
+      
+    </ul>
+  
+    <h3>Forbidden</h3>
+    <ul class="license-forbidden">
+      
+      
+        
+        
+      
+        
+        
+          <li class="no-liability">
+            <span class="license-sprite"></span>
+            Hold Liable
+          </li>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    </ul>
+  
+
+  </div>
+
+  
+
+</div> <!-- /sidebar -->
+
+
+      </div> <!-- /clearfix -->
+
+      <footer class="site-footer clearfix">
+        <nav>
+          <a href="/about/">About</a>
+          <a href="/terms-of-service/">Terms of Service</a>
+        </nav>
+        <p>
+          If you have questions or issues, it is always best to consult a legal professional.<br>
+          This site is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">
+          Creative Commons Attribution 3.0 Unported License</a>.
+        </p>
+        <div class="with-love">
+          Demystified with &lt;3 by <a href="http://github.com">GitHub, Inc.</a>
+        </div>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/qtip2/jquery.qtip.min.js"></script>
+    <script src="/assets/vendor/zeroclipboard/ZeroClipboard.min.js"></script>
+    <script>
+      window.annotations = {"required":[{"description":"Include a copy of the license and copyright notice with the code.","label":"License and copyright notice","tag":"include-copyright"},{"description":"Indicate significant changes made to the code.","label":"State Changes","tag":"document-changes"},{"description":"Source code must be made available when distributing the software. In the case of LGPL, the source for the library (and not the entire program) must be made available.","label":"Disclose Source","tag":"disclose-source"},{"description":"Users who interact with the software via network are given the right to receive a copy of the corresponding source code.","label":"Network Use is Distribution","tag":"network-use-disclose"},{"description":"The library may be used within a non-open-source application.","label":"Library usage","tag":"library-usage"},{"description":"You must change the name of the software if you modify it.","label":"Rename","tag":"rename"}],"permitted":[{"description":"This software and derivatives may be used for commercial purposes.","label":"Commercial Use","tag":"commercial-use"},{"description":"This software may be modified.","label":"Modification","tag":"modifications"},{"description":"You may distribute this software.","label":"Distribution","tag":"distribution"},{"description":"You may grant a sublicense to modify and distribute this software to third parties not included in the license.","label":"Sublicensing","tag":"sublicense"},{"description":"You may use and modify the software without distributing it.","label":"Private Use","tag":"private-use"},{"description":"This license provides an express grant of patent rights from the contributor to the recipient.","label":"Patent Grant","tag":"patent-grant"}],"forbidden":[{"description":"While this may be implicitly true of all licenses, this license explicitly states that you may NOT use the names, logos, or trademarks of contributors.","label":"Use Trademark","tag":"trademark-use"},{"description":"Software is provided without warranty and the software author/license owner cannot be held liable for damages.","label":"Hold Liable","tag":"no-liability"},{"description":"You may not grant a sublicense to modify and distribute this software to third parties not included in the license.","label":"Sublicensing","tag":"no-sublicense"},{"description":"This software may not be modified.","label":"Modification","tag":"modifications"},{"description":"You may not distribute this software.","label":"Distribution","tag":"distribution"},{"description":"You may not grant a sublicense to modify and distribute this software to third parties not included in the license.","label":"Sublicensing","tag":"sublicense"}]};
+    </script>
+    <script src="/assets/js/app.js"></script>
+    
+
+    <script>
+      !function(L,I,C,e,N,S,E){L.GoogleAnalyticsObject=N,L[N]=L[N]||function(){
+      (L[N].q=L[N].q||[]).push(arguments)},L[N].l=+new Date,S=I.createElement(C),
+      E=I.getElementsByTagName(C)[0],S.src=e,E.parentNode.insertBefore(S,E)
+      }(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+
+      ga('create', 'UA-3769691-24', 'choosealicense.com');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>
+
