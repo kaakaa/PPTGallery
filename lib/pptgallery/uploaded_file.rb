@@ -40,7 +40,7 @@ class UploadedFile
       return
     end
     pdfPath = File.join(@meta.dirname, "#{@meta.filename}.pdf")
-    CommandExecutor.jodconverter(uploadedFilePath, pdfPath)
+    CommandExecutor.convert(uploadedFilePath, pdfPath)
   end
 
   def savePng
