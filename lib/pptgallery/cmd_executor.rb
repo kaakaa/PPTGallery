@@ -1,4 +1,5 @@
 require 'systemu'
+require 'libreconv'
 
 class CommandExecutor
 	def self.jodconverter(uploadedFilePath, pdfPath)
@@ -16,5 +17,9 @@ class CommandExecutor
 		MyLogger.log.info "Exit Code: #{status}"
 		MyLogger.log.info "STDOUT: #{stdout}"
 		MyLogger.log.info "STERRT: #{stderr}"
-        end
+	end
+
+	def self.convert(inputPath, outputPath)
+		Libreconv.convert(inputPath,outputPath)
+	end
 end
