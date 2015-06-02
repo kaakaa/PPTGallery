@@ -17,6 +17,10 @@ class MetaData
     "#{@resourceDir}/#{@created_at}_#{@filename}"
   end
 
+  def uploaded
+    File.join(dirname, "#{@filename}.#{@ext}")
+  end
+
   def htmlPath
     "#{dirname.split(@publicPath)[-1]}/#{@filename}.html"
   end

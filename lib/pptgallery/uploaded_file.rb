@@ -1,5 +1,6 @@
 ﻿require 'RMagick'
 require 'haml'
+require 'pptgallery/conv/pdf'
 
 require File.expand_path('cmd_executor', File.dirname(__FILE__))
 
@@ -36,11 +37,7 @@ class UploadedFile
   end
 
   def savePdf
-    if @meta.ext == 'pdf'
-      return
-    end
-    pdfPath = File.join(@meta.dirname, "#{@meta.filename}.pdf")
-    CommandExecutor.convert(uploadedFilePath, pdfPath)
+    PDF.convert(@meta) unless @meta.ext == 'pdf'
   end
 
   def savePng
