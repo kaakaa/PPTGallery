@@ -7,7 +7,7 @@ require 'builder'
 require 'logger'
 
 require File.expand_path('helpers', File.dirname(__FILE__))
-require File.expand_path('uploaded_file', File.dirname(__FILE__))
+require File.expand_path('slide', File.dirname(__FILE__))
 require File.expand_path('meta_data', File.dirname(__FILE__))
 require File.expand_path('post', File.dirname(__FILE__))
 require File.expand_path('my_logger', File.dirname(__FILE__))
@@ -49,8 +49,7 @@ module PPTGallery
 
       begin
         MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
-        uploadedFile = UploadedFile.new(settings.root, settings.public_folder, meta)
-        uploadedFile.convert(request.ip, params['myfile'][:tempfile])
+        Slide.new(settings, meta).upload(request.ip, params['myfile'][:tempfile])
       rescue => ex
         MyLogger.log.error "#{request.ip} : Failing Upload to #{meta.filename}"
         MyLogger.log.error "#{request.ip} : #{ex.message}"

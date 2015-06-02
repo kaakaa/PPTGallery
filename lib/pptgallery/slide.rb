@@ -3,15 +3,15 @@ require 'pptgallery/conv/pdf'
 require 'pptgallery/conv/png'
 require 'pptgallery/conv/html'
 
-class UploadedFile
-  def initialize(root, home, m)
-    @root = root
-    @home = home
+class Slide
+  def initialize(settings, m)
+    @root = settings.root 
+    @home = settings.public_folder
     @meta = m
     Dir.mkdir(@meta.dirname) if !Dir.exist?(@meta.dirname)
   end
 
-  def convert(ip, tempfile)
+  def upload(ip, tempfile)
     saveUploaded(tempfile)
     MyLogger.log.info "#{ip} : #{@meta.filename} saved."
 
