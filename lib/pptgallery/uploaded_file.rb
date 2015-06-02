@@ -1,8 +1,9 @@
 ﻿require 'RMagick'
 require 'haml'
 require 'pptgallery/conv/pdf'
+require 'pptgallery/conv/png'
 
-require File.expand_path('cmd_executor', File.dirname(__FILE__))
+# require File.expand_path('cmd_executor', File.dirname(__FILE__))
 
 class UploadedFile
   def initialize(root, home, m)
@@ -16,10 +17,10 @@ class UploadedFile
     saveUploaded(tempfile)
     MyLogger.log.info "#{ip} : #{@meta.filename} saved."
 
-    savePdf()
+    PDF.convert(@meta) unless @meta.ext == 'pdf'
     MyLogger.log.info "#{ip} : Complete converting to PDF."
 
-    savePng()
+    PNG.convert(@meta)
     MyLogger.log.info "#{ip} : Complete converting to PNG."
 
     makeHtml()
@@ -33,35 +34,6 @@ class UploadedFile
   def saveUploaded(uploadedFile)
     File.open(uploadedFilePath, "w") do |f|
       f.write(uploadedFile.read)
-    end
-  end
-
-  def savePdf
-    PDF.convert(@meta) unless @meta.ext == 'pdf'
-  end
-
-  def savePng
-    Dir.mkdir(File.join(@meta.dirname, "img"))
-    Dir.mkdir(File.join(@meta.dirname, "img_low"))
-
-    pdf = File.join(@meta.dirname, "#{@meta.filename}.pdf")
-
-    writeSlideImages('img', pdf, {:quality => 80, :density => '150'})
-    writeSlideImages('img_low', pdf, {:quality => 10, :density => '50'})
-  end
-
-  def writeSlideImages(dirname, file, options = {})
-    getImageList(file, options).each_with_index do |img, index|
-      path = File.join(@meta.dirname, dirname, "page#{format("%03d", index+1)}.jpg")
-      img.write(path)
-    end
-  end
-
-  def getImageList(file, options = {})
-    Magick::ImageList.new(file) do
-      self.format = options[:format] || 'JPEG'
-      self.quality = options[:quality] || 100
-      self.density = options[:density] || '100'
     end
   end
 
