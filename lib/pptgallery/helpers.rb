@@ -6,7 +6,7 @@ module Helpers
   end
 
   def getMetaDataForDisplay(dirname, page)
-    dirs = Dir.glob("#{dirname}/*/").sort.reverse
+    dirs = Dir.glob("#{dirname}/*/").select{|e| File.exists?("#{e}.meta")}.sort.reverse
     metaDataArray = Array.new
     dirs[(page-1)*15..page*15-1].each{ |d|
       metaDataArray << MetaData.load(settings.public_folder, d)

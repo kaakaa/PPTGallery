@@ -5,6 +5,7 @@ require 'haml'
 require 'fileutils'
 require 'builder'
 require 'logger'
+require 'eventmachine'
 
 require File.expand_path('helpers', File.dirname(__FILE__))
 require File.expand_path('slide', File.dirname(__FILE__))
@@ -47,14 +48,21 @@ module PPTGallery
       MyLogger.log.info "#{request.ip} : Upload file #{params['myfile'][:filename]}"
       meta = MetaData.create(settings.public_folder, params['myfile'][:filename])
 
-      begin
-        MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
-        Slide.new(settings, meta).upload(request.ip, params['myfile'][:tempfile])
-      rescue => ex
-        MyLogger.log.error "#{request.ip} : Failing Upload to #{meta.filename}"
-        MyLogger.log.error "#{request.ip} : #{ex.message}"
-        deleteUploaded(meta.dirname)
+      upload = proc do
+        begin
+          MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
+          Slide.new(settings, meta).upload(request.ip, params['myfile'][:tempfile])
+        rescue => ex
+          MyLogger.log.error "#{request.ip} : Failing Upload to #{meta.filename}"
+          MyLogger.log.error "#{request.ip} : #{ex.message}"
+          deleteUploaded(meta.dirname)
+        end
       end
+      callback = proc do |c|
+        meta.save()
+      end
+      EM.defer(upload, callback)
+
       redirect '/gallery/1'
     end
 

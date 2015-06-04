@@ -25,8 +25,6 @@ class Slide
     HTML.create(@meta, @home)
     MyLogger.log.info "#{ip} : Complete making HTML."
 
-    createMetaFile()
-    MyLogger.log.info "#{ip} : Complete creating .meta."
     MyLogger.log.info "#{ip} : Complete uploading."
   end
 
@@ -36,10 +34,7 @@ class Slide
     end
   end
 
-  def createMetaFile
-    @meta.save()
-  end
-    def uploadedFilePath
+  def uploadedFilePath
     File.join(@meta.dirname, "#{@meta.filename}.#{@meta.ext}")
   end
 end
