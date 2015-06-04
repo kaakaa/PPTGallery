@@ -1,4 +1,4 @@
-require 'RMagick'
+require 'rmagick'
 
 class PNG
   def self.convert(meta)
