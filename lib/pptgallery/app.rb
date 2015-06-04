@@ -50,6 +50,9 @@ module PPTGallery
 
       upload = proc do
         begin
+          Dir.mkdir(meta.dirname) if !Dir.exist?(meta.dirname)
+          meta.save
+
           MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
           Slide.new(settings, meta).upload(request.ip, params['myfile'][:tempfile])
         rescue => ex
@@ -59,7 +62,7 @@ module PPTGallery
         end
       end
       callback = proc do |c|
-        meta.save()
+        # meta.save()
       end
       EM.defer(upload, callback)
 

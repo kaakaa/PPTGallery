@@ -8,7 +8,6 @@ class Slide
     @root = settings.root 
     @home = settings.public_folder
     @meta = m
-    Dir.mkdir(@meta.dirname) if !Dir.exist?(@meta.dirname)
   end
 
   def upload(ip, tempfile)
