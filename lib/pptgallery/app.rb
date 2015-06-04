@@ -43,6 +43,14 @@ module PPTGallery
       haml :main
     end
 
+    get '/log' do
+      logs = File.expand_path('../../log/application.log', File.dirname(__FILE__))
+      log = File.open(logs).read if File.exists?(logs)
+
+      content_type 'text/plain'
+      log.split("\n").reverse.join("\n")
+    end
+
     post "/upload" do
       # uplod dir name is "#{Datetime}_#{UploadedFilename}"
       MyLogger.log.info "#{request.ip} : Upload file #{params['myfile'][:filename]}"
