@@ -1,0 +1,15 @@
+{
+	"name": "pptgallery",
+	"description": "Gallery of Powerpoint",
+	"keywords": [
+		"ppt",
+		"powerpoint",
+		"slide"
+	],
+	"website": "https://github.com/kaakaa/PPTGallery",
+	"repository": "https://github.com/kaakaa/PPTGallery",
+	"success_url": "/",
+	"env": {
+		"BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi"
+	}
+}

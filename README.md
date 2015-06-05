@@ -10,6 +10,10 @@ USAGE
 
 see cookbooks -> [PPTGallery_vagrant](http://github.com/kaakaa/PPTGallery_vagrant.git "PPTGallery_vagrant")
 
+or 
+ 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 REQUIREMENTS
 ------------
 
