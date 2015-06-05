@@ -10,6 +10,6 @@
 	"repository": "https://github.com/kaakaa/PPTGallery",
 	"success_url": "/",
 	"env": {
-		"BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi"
+		"BUILDPACK_URL": "https://github.com/ddollar/heroku-buildpack-multi.git"
 	}
 }
