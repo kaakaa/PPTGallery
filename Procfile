@@ -1,1 +1,1 @@
-web: bundle exec thin start -p 5000 -o 0.0.0.0
+web: bundle exec thin start -p $PORT -o 0.0.0.0
