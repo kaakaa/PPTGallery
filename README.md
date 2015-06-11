@@ -5,14 +5,16 @@ This app is ppt/pptx gallery on CentOS.
 
 When you upload .ppt or .pptx file, this app coverts it to pdf and slide html.
 
+[sample.gif](https://raw.githubusercontent.com/kaakaa/pptgallery/master/sample.gif "sample.gif")
+
 USAGE
 -----
 
-see cookbooks -> [PPTGallery_vagrant](http://github.com/kaakaa/PPTGallery_vagrant.git "PPTGallery_vagrant")
+```
+bundle install --path vendor/bundle
+bundle exec foreman start
+```
 
-or 
- 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 REQUIREMENTS
 ------------
