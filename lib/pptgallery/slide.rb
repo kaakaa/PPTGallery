@@ -10,7 +10,7 @@ class Slide
     @meta = m
   end
 
-  def upload(ip, tempfile)
+  def upload(ip, contents)
     saveUploaded(tempfile)
     MyLogger.log.info "#{ip} : #{@meta.filename} saved."
 
@@ -27,9 +27,9 @@ class Slide
     MyLogger.log.info "#{ip} : Complete uploading."
   end
 
-  def saveUploaded(uploadedFile)
+  def saveUploaded(contents)
     File.open(uploadedFilePath, "w") do |f|
-      f.write(uploadedFile.read)
+      f.write(contents)
     end
   end
 
