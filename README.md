@@ -5,7 +5,7 @@ This app is ppt/pptx gallery on CentOS.
 
 When you upload .ppt or .pptx file, this app coverts it to pdf and slide html.
 
-[sample.gif](https://raw.githubusercontent.com/kaakaa/pptgallery/master/sample.gif "sample.gif")
+![](https://raw.githubusercontent.com/kaakaa/pptgallery/master/sample.gif)
 
 USAGE
 -----
