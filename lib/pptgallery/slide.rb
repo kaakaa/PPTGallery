@@ -11,7 +11,7 @@ class Slide
   end
 
   def upload(ip, contents)
-    saveUploaded(tempfile)
+    saveUploaded(contents)
     MyLogger.log.info "#{ip} : #{@meta.filename} saved."
 
     PDF.convert(@meta) unless @meta.ext == 'pdf'
