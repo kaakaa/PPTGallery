@@ -54,6 +54,7 @@ module PPTGallery
     post "/upload" do
       # uplod dir name is "#{Datetime}_#{UploadedFilename}"
       MyLogger.log.info "#{request.ip} : Upload file #{params['myfile'][:filename]}"
+      uploadContents = params['myfile'][:tempfile].read
       meta = MetaData.create(settings.public_folder, params['myfile'][:filename])
 
       upload = proc do
@@ -61,7 +62,6 @@ module PPTGallery
           Dir.mkdir(meta.dirname) if !Dir.exist?(meta.dirname)
           meta.save
 
-	  uploadContents = params['myfile'][:tempfile].read
           MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
           Slide.new(settings, meta).upload(request.ip, uploadContents)
         rescue => ex
