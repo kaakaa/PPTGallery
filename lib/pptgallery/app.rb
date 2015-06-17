@@ -61,7 +61,7 @@ module PPTGallery
           Dir.mkdir(meta.dirname) if !Dir.exist?(meta.dirname)
           meta.save
 
-	  uploadContents = params['myfile'][:tempfile]
+	  uploadContents = params['myfile'][:tempfile].read
           MyLogger.log.info "#{request.ip} : Start converting #{meta.relativePath}"
           Slide.new(settings, meta).upload(request.ip, uploadContents)
         rescue => ex
